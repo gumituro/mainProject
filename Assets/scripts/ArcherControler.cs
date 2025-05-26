@@ -1,0 +1,194 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class ArcherController : MonoBehaviour
+{
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    public float doubleJumpForce = 8f;
+
+    private Rigidbody2D rb;
+    private Vector2 moveInput;
+    private bool isGrounded = true;
+    private bool canDoubleJump = false;
+
+    private PlayerInput playerInput;
+    private InputAction moveAction;
+    private InputAction jumpAction;
+    private InputAction doubleJumpAction;
+    private InputAction attackAction;
+
+    public Animator anim;
+    public SpriteRenderer sprite;
+
+    [Header("Arrow Settings")]
+    public GameObject arrowPrefab;
+    public Transform shootPoint;
+    public float arrowSpeed = 10f;
+
+    private bool canShoot = true;
+    public float shootCooldown = 0.5f;
+
+    void Start()
+    {
+        if (anim == null)
+            anim = GetComponent<Animator>();
+    }
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
+
+        moveAction = playerInput.actions["move"];
+        jumpAction = playerInput.actions["jump"];
+        doubleJumpAction = playerInput.actions["doubleJump"];
+        attackAction = playerInput.actions["attack"];
+
+        jumpAction.performed += ctx => Jump();
+        doubleJumpAction.performed += ctx => DoubleJump();
+        attackAction.performed += ctx => Attack();
+    }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+        jumpAction.Enable();
+        doubleJumpAction.Enable();
+        attackAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+        jumpAction.Disable();
+        doubleJumpAction.Disable();
+        attackAction.Disable();
+    }
+
+    private void Update()
+    {
+        moveInput = moveAction.ReadValue<Vector2>();
+
+        if (moveInput.x < 0)
+            sprite.flipX = true;
+        else if (moveInput.x > 0)
+            sprite.flipX = false;
+
+
+        // // Flip sprite based on movement or velocity
+        // if (rb.velocity.x < 0)
+        //     sprite.flipX = true;
+        // else if (rb.velocity.x > 0)
+        //     sprite.flipX = false;
+
+        // Animation states
+        anim.SetBool("isJumping", !isGrounded);
+        anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
+
+        // Enable double jump if grounded
+        if (isGrounded)
+        {
+            canDoubleJump = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+    }
+
+    private void Jump()
+    {
+        if (isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            isGrounded = false;
+            canDoubleJump = true;
+        }
+    }
+
+    private void DoubleJump()
+    {
+        if (canDoubleJump)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
+            canDoubleJump = false;
+        }
+
+        Debug.Log("Double jump key pressed");
+    }
+
+    private void Attack()
+    {
+        if (!canShoot) return;
+
+        anim.SetTrigger("attack");
+        canShoot = false;
+        Invoke(nameof(ResetShoot), shootCooldown);
+        Invoke(nameof(ShootArrow), 0.8f); // Delay before shooting arrow
+    }
+
+    private void ResetShoot()
+    {
+        canShoot = true;
+    }
+
+   private void ShootArrow()
+{
+    // تعیین جهت تیر بر اساس flipX کاراکتر
+    float direction = sprite.flipX ? -1f : 1f;
+
+    // موقعیت شروع تیر
+    Vector3 spawnPosition = shootPoint.position;
+    spawnPosition.x += direction * 0.2f;
+
+    GameObject arrow = Instantiate(arrowPrefab, spawnPosition, Quaternion.identity);
+
+    // تعیین جهت حرکت تیر
+    Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
+    if (arrowRb != null)
+    {
+        arrowRb.linearVelocity = new Vector2(direction * arrowSpeed, 0f);
+    }
+
+    // چرخش ظاهری تیر
+    SpriteRenderer arrowSprite = arrow.GetComponent<SpriteRenderer>();
+    if (arrowSprite != null)
+    {
+        arrowSprite.flipX = direction < 0;
+    }
+}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            canDoubleJump = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    public void TakeDamage()
+    {
+        anim.SetTrigger("hurt");
+        Debug.Log("Character took damage!");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EnemyAttack"))
+        {
+            TakeDamage();
+        }
+    }
+}
