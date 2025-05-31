@@ -200,11 +200,11 @@ public class ArcherController : MonoBehaviour
         Debug.Log("Character took damage!");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("EnemyAttack"))
-        {
-            TakeDamage();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("EnemyAttack"))
+    //     {
+    //         TakeDamage();
+    //     }
+    // }
 }

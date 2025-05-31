@@ -5,21 +5,17 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
-  - Stair
-  - hall
-  - boundry
-  - newChunk
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - palyerArcher
+  - bat
   - Water
   - UI
-  - playerSwordsman
-  - arrow
-  - archCamera
-  - swordCamera
+  - Archer
+  - Sowrdsman
+  - Arrow
+  - bulletPrefab1
   - 
   - 
   - 

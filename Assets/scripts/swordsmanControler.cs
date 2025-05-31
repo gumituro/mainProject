@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SwordmanController : MonoBehaviour
 {
@@ -13,7 +15,6 @@ public class SwordmanController : MonoBehaviour
     private Vector2 moveInput;
     private bool isGrounded = true;
     private bool isDashing = false;
-
     private float dashTime;
 
     private PlayerInput playerInput;
@@ -25,14 +26,27 @@ public class SwordmanController : MonoBehaviour
     public Animator anim;
     public SpriteRenderer sprite;
 
+    // [Header("Health System")]
+    // public int maxHealth = 100;
+    // public int currentHealth;
+
+    // public int maxLives = 3;
+    // public int currentLives;
+
+    // public Slider healthSlider;
+    // public Image[] heartIcons;
+    // public Sprite fullHeart;
+    // public Sprite emptyHeart;
+
+    public GameObject gameOverScreen;
+
     void Start()
     {
-        if (anim == null)
-        {
-            anim = GetComponent<Animator>();
-        }
+        if (anim == null) anim = GetComponent<Animator>();
+        // currentHealth = maxHealth;
+        // currentLives = maxLives;
+        // UpdateHealthUI();
     }
-
 
     private void Awake()
     {
@@ -78,18 +92,11 @@ public class SwordmanController : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
             }
         }
-        if (rb.linearVelocity.x < 0)
-        {
-            sprite.flipX = true;
-        }
-        else if (rb.linearVelocity.x > 0)
-        {
-            sprite.flipX = false;
-        }
+
+        sprite.flipX = rb.linearVelocity.x < 0;
 
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
-
     }
 
     private void FixedUpdate()
@@ -147,19 +154,66 @@ public class SwordmanController : MonoBehaviour
             isGrounded = false;
         }
     }
-       public void TakeDamage()
-    {
-        anim.SetTrigger("hurt");
-        //این قسمت برای کاهش جون
-        Debug.Log("Character took damage!");
-    }
 
-//تست برای تیک دمچ
+    // 💥 آسیب دیدن
+    // public void TakeDamage(int damage = 25)
+    // {
+    //     anim.SetTrigger("hurt");
+    //     currentHealth -= damage;
+    //     UpdateHealthUI();
+
+    //     if (currentHealth <= 0)
+    //     {
+    //         currentLives--;
+    //         UpdateHealthUI();
+
+    //         if (currentLives > 0)
+    //         {
+    //             Respawn();
+    //         }
+    //         else
+    //         {
+    //             GameOver();
+    //         }
+    //     }
+    // }
+
+    // void Respawn()
+    // {
+    //     currentHealth = maxHealth;
+    //     transform.position = Vector3.zero; // یا محل تولد دلخواه
+    //     Debug.Log("Respawning...");
+    // }
+
+    // void GameOver()
+    // {
+    //     Debug.Log("Game Over");
+    //     if (gameOverScreen != null)
+    //         gameOverScreen.SetActive(true);
+
+    //     this.enabled = false;
+    // }
+
+    // void UpdateHealthUI()
+    // {
+    //     if (healthSlider != null)
+    //     {
+    //         healthSlider.maxValue = maxHealth;
+    //         healthSlider.value = currentHealth;
+    //     }
+
+    //     for (int i = 0; i < heartIcons.Length; i++)
+    //     {
+    //         heartIcons[i].sprite = i < currentLives ? fullHeart : emptyHeart;
+    //     }
+    // }
+
+    // // تست آسیب دیدن با برخورد
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("EnemyAttack"))
-        {
-            TakeDamage();
-        }
+        // if (collision.CompareTag("EnemyAttack"))
+        // {
+        //     Damage();
+        // }
     }
 }
