@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyPatrol : MonoBehaviour
+public class enemy1controler : MonoBehaviour
 {
     public Transform pointA;
     public Transform pointB;
