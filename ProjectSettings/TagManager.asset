@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Stair
+  - hall
+  - boundry
+  - newChunk
   layers:
   - Default
   - TransparentFX
@@ -14,8 +18,8 @@ TagManager:
   - UI
   - playerSwordsman
   - arrow
-  - 
-  - 
+  - archCamera
+  - swordCamera
   - 
   - 
   - 
