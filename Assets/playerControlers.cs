@@ -258,6 +258,15 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""downDash"",
+                    ""type"": ""Button"",
+                    ""id"": ""df42d8a3-119e-4432-aa11-0b8f83c503d5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -337,6 +346,17 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
                     ""action"": ""attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d245078-2cfd-49b1-9334-68c763aca380"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""downDash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -355,6 +375,7 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
         m_Archer_move = m_Archer.FindAction("move", throwIfNotFound: true);
         m_Archer_doubleJump = m_Archer.FindAction("doubleJump", throwIfNotFound: true);
         m_Archer_attack = m_Archer.FindAction("attack", throwIfNotFound: true);
+        m_Archer_downDash = m_Archer.FindAction("downDash", throwIfNotFound: true);
     }
 
     ~@PlayerControlers()
@@ -569,6 +590,7 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
     private readonly InputAction m_Archer_move;
     private readonly InputAction m_Archer_doubleJump;
     private readonly InputAction m_Archer_attack;
+    private readonly InputAction m_Archer_downDash;
     /// <summary>
     /// Provides access to input actions defined in input action map "Archer".
     /// </summary>
@@ -596,6 +618,10 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Archer/attack".
         /// </summary>
         public InputAction @attack => m_Wrapper.m_Archer_attack;
+        /// <summary>
+        /// Provides access to the underlying input action "Archer/downDash".
+        /// </summary>
+        public InputAction @downDash => m_Wrapper.m_Archer_downDash;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -634,6 +660,9 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
             @attack.started += instance.OnAttack;
             @attack.performed += instance.OnAttack;
             @attack.canceled += instance.OnAttack;
+            @downDash.started += instance.OnDownDash;
+            @downDash.performed += instance.OnDownDash;
+            @downDash.canceled += instance.OnDownDash;
         }
 
         /// <summary>
@@ -657,6 +686,9 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
             @attack.started -= instance.OnAttack;
             @attack.performed -= instance.OnAttack;
             @attack.canceled -= instance.OnAttack;
+            @downDash.started -= instance.OnDownDash;
+            @downDash.performed -= instance.OnDownDash;
+            @downDash.canceled -= instance.OnDownDash;
         }
 
         /// <summary>
@@ -761,5 +793,12 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "downDash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDownDash(InputAction.CallbackContext context);
     }
 }

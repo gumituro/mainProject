@@ -23,6 +23,7 @@ public class ArcherController : MonoBehaviour
     private InputAction jumpAction;
     private InputAction doubleJumpAction;
     private InputAction attackAction;
+    private InputAction downDashAction;
 
     public Animator anim;
     public SpriteRenderer sprite;
@@ -52,10 +53,12 @@ public class ArcherController : MonoBehaviour
         jumpAction = playerInput.actions["jump"];
         doubleJumpAction = playerInput.actions["doubleJump"];
         attackAction = playerInput.actions["attack"];
+        downDashAction = playerInput.actions["downDash"];
 
         jumpAction.performed += ctx => Jump();
         doubleJumpAction.performed += ctx => DoubleJump();
         attackAction.performed += ctx => Attack();
+        downDashAction.performed += ctx => DashDown();
     }
 
     private void OnEnable()
@@ -64,6 +67,7 @@ public class ArcherController : MonoBehaviour
         jumpAction.Enable();
         doubleJumpAction.Enable();
         attackAction.Enable();
+        downDashAction.Enable();
     }
 
     private void OnDisable()
@@ -72,6 +76,7 @@ public class ArcherController : MonoBehaviour
         jumpAction.Disable();
         doubleJumpAction.Disable();
         attackAction.Disable();
+        downDashAction.Disable();
     }
 
     private void Update()
@@ -135,6 +140,17 @@ public class ArcherController : MonoBehaviour
         canShoot = false;
         Invoke(nameof(ResetShoot), shootCooldown);
         Invoke(nameof(ShootArrow), 0.8f); // Delay before shooting arrow
+    }
+    
+    private void DashDown() {
+        // if (!isGrounded)
+        //     rb.linearVelocity = new Vector2(rb.linearVelocity.x, -jumpForce * 1.5f);
+        if (isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -jumpForce);
+            isGrounded = false;
+        }
+        Debug.Log("DashDown key pressed");
     }
 
     private void ResetShoot()
