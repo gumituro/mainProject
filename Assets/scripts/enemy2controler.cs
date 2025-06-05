@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class enemy2controler : MonoBehaviour
@@ -9,12 +11,18 @@ public class enemy2controler : MonoBehaviour
 
     private Transform target;
     private float fireTimer = 0f;
+    public Boolean ViewIsRight; 
 
     void Update()
     {
         if (target != null)
         {
-            transform.LookAt(target);
+
+            if (ViewIsRight)
+            {
+                // gameObject.transform.rotation.y = 180f; 
+                transform.rotation = Quaternion.Euler(0 , 180f , 0); 
+            }         
 
             fireTimer += Time.deltaTime;
             if (fireTimer >= fireRate)
@@ -42,8 +50,17 @@ public class enemy2controler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {       
-             Debug.Log("Player is in range");
+        {
+            if (other.transform.position.x > gameObject.transform.position.x)
+            {
+                ViewIsRight = true;
+            }
+            else
+            {
+                ViewIsRight = false; 
+            }
+
+            //  Debug.Log("Player is in range");
 
             target = other.transform;
         }

@@ -5,17 +5,18 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - bat
+  - PlayerArcher
   - Water
   - UI
-  - Archer
-  - Sowrdsman
-  - Arrow
-  - bulletPrefab1
+  - PlayerSwordsman
+  - ArcherArrow
+  - Enemy
+  - 
   - 
   - 
   - 

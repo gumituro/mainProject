@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7031371852610624282}
   - component: {fileID: 4802158718180002503}
   - component: {fileID: 785859803901207710}
-  - component: {fileID: 608889377700767620}
+  - component: {fileID: -8837195911321447773}
   m_Layer: 9
   m_Name: bulletPrefab
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.412, y: 0.8219, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -147,13 +147,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.50000006
---- !u!114 &608889377700767620
+--- !u!114 &-8837195911321447773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1645467806658711092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a95367527d8c9f4b9e0127fceb14478, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c11ccbf6c5e1d14eb048eeb3c831e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5

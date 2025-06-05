@@ -2,9 +2,24 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class SwordmanController : MonoBehaviour
 {
+    // public AttackTrigger attackTrigger;
+
+    // public Transform attackPoint;
+    public GameObject attackPoint;
+    public float radius;
+    public LayerMask enemies;
+
+    // public float attackRange = 0.5f;
+    public int attackDamage = 1;
+    public int baseDamage = 1;
+    public bool isDead = false;
+
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -26,26 +41,15 @@ public class SwordmanController : MonoBehaviour
     public Animator anim;
     public SpriteRenderer sprite;
 
-    // [Header("Health System")]
-    // public int maxHealth = 100;
-    // public int currentHealth;
-
-    // public int maxLives = 3;
-    // public int currentLives;
-
-    // public Slider healthSlider;
-    // public Image[] heartIcons;
-    // public Sprite fullHeart;
-    // public Sprite emptyHeart;
 
     public GameObject gameOverScreen;
 
     void Start()
     {
         if (anim == null) anim = GetComponent<Animator>();
-        // currentHealth = maxHealth;
-        // currentLives = maxLives;
-        // UpdateHealthUI();
+
+
+
     }
 
     private void Awake()
@@ -62,6 +66,7 @@ public class SwordmanController : MonoBehaviour
         attackAction.performed += ctx => attack();
         dashAction.performed += ctx => Dash();
     }
+
 
     private void OnEnable()
     {
@@ -81,6 +86,8 @@ public class SwordmanController : MonoBehaviour
 
     private void Update()
     {
+
+
         moveInput = moveAction.ReadValue<Vector2>();
 
         if (isDashing)
@@ -97,6 +104,8 @@ public class SwordmanController : MonoBehaviour
 
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
+
+
     }
 
     private void FixedUpdate()
@@ -132,12 +141,92 @@ public class SwordmanController : MonoBehaviour
 
     private void attack()
     {
-        if (!isDashing && isGrounded)
+
+        anim.SetTrigger("attack");
+
+        // if (enemyInRange == false)
+        // {
+        //     Debug.Log("enemy not found");
+        // }
+
+        // if (enemyInRange == true && currentEnemy != null)
+        // {
+        //     Debug.Log("enemy in range");
+
+        //     Enemy1Health enemy1 = currentEnemy.GetComponent<Enemy1Health>(); // هلث انمی حرکتی قرار داده شد
+
+        //     if (enemy1 != null)
+        //     {
+        //         // Debug.Log("");
+        //         enemy1.TakeDamage(attackDamage);
+        //     }
+
+        // }
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius , enemies);
+
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            anim.SetTrigger("attack");
-            Debug.Log("Attack Triggered");
+            Debug.Log("hit enemy");
+
+            // Enemy.GetComponent<Enemy1Health>()?.TakeDamage(attackDamage);
         }
+
+
     }
+
+
+
+    void OnDrawGizmos()
+    {
+        if (attackPoint == null) return;
+
+        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
+        Gizmos.color = Color.red;
+    }
+
+
+
+
+
+
+    // public void die()
+    // {
+    //     isDead = true; 
+    //     anim.SetTrigger("dead");
+
+    // }
+    // public bool enemyInRange = false;
+    // public GameObject currentEnemy = null;
+
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //         Debug.Log("Trigger entered with: " + other.name);
+
+    //     if (other.CompareTag("Enemy"))
+    //     {
+    //         enemyInRange = true;
+    //         currentEnemy = other.gameObject;
+
+    //     }
+    // }
+
+
+
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Enemy"))
+    //     {
+    //         if (other.gameObject == currentEnemy)
+
+    //             enemyInRange = false;
+    //         currentEnemy = null;
+
+    //     }
+    // }
+
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -147,6 +236,11 @@ public class SwordmanController : MonoBehaviour
         }
     }
 
+
+
+
+
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -154,66 +248,23 @@ public class SwordmanController : MonoBehaviour
             isGrounded = false;
         }
     }
+    private bool isBoosted = false;
 
-    // 💥 آسیب دیدن
-    // public void TakeDamage(int damage = 25)
-    // {
-    //     anim.SetTrigger("hurt");
-    //     currentHealth -= damage;
-    //     UpdateHealthUI();
-
-    //     if (currentHealth <= 0)
-    //     {
-    //         currentLives--;
-    //         UpdateHealthUI();
-
-    //         if (currentLives > 0)
-    //         {
-    //             Respawn();
-    //         }
-    //         else
-    //         {
-    //             GameOver();
-    //         }
-    //     }
-    // }
-
-    // void Respawn()
-    // {
-    //     currentHealth = maxHealth;
-    //     transform.position = Vector3.zero; // یا محل تولد دلخواه
-    //     Debug.Log("Respawning...");
-    // }
-
-    // void GameOver()
-    // {
-    //     Debug.Log("Game Over");
-    //     if (gameOverScreen != null)
-    //         gameOverScreen.SetActive(true);
-
-    //     this.enabled = false;
-    // }
-
-    // void UpdateHealthUI()
-    // {
-    //     if (healthSlider != null)
-    //     {
-    //         healthSlider.maxValue = maxHealth;
-    //         healthSlider.value = currentHealth;
-    //     }
-
-    //     for (int i = 0; i < heartIcons.Length; i++)
-    //     {
-    //         heartIcons[i].sprite = i < currentLives ? fullHeart : emptyHeart;
-    //     }
-    // }
-
-    // // تست آسیب دیدن با برخورد
-    private void OnTriggerEnter2D(Collider2D collision)
+    public IEnumerator TemporaryDamageBoost(int boostAmount, float duration)
     {
-        // if (collision.CompareTag("EnemyAttack"))
-        // {
-        //     Damage();
-        // }
+        if (isBoosted) yield break;
+        isBoosted = true;
+        attackDamage += boostAmount;
+        Debug.Log("Boosted damage: " + attackDamage);
+
+        yield return new WaitForSeconds(duration);
+
+        attackDamage = baseDamage;
+        Debug.Log("Damage reset to: " + attackDamage);
+        isBoosted = false;
     }
+
+
+
+
 }
