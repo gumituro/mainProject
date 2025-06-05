@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6657053915032006830}
   - component: {fileID: 2225897375954870000}
   - component: {fileID: 1358404877475383945}
+  - component: {fileID: 6804861863380722919}
   m_Layer: 7
   m_Name: arrow
   m_TagString: Untagged
@@ -119,7 +120,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -169,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6804861863380722919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697479857497527700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b576807c9763f40ab0b463b50e74b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1

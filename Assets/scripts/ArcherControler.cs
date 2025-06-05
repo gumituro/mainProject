@@ -1,8 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections; 
 
 public class ArcherController : MonoBehaviour
 {
+
+    public int baseDamage = 1;
+    public int attackDamage= 1; 
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -34,6 +39,8 @@ public class ArcherController : MonoBehaviour
     {
         if (anim == null)
             anim = GetComponent<Animator>();
+
+        attackDamage = baseDamage;    
     }
 
     private void Awake()
@@ -135,31 +142,47 @@ public class ArcherController : MonoBehaviour
         canShoot = true;
     }
 
-   private void ShootArrow()
-{
-    // تعیین جهت تیر بر اساس flipX کاراکتر
-    float direction = sprite.flipX ? -1f : 1f;
-
-    // موقعیت شروع تیر
-    Vector3 spawnPosition = shootPoint.position;
-    spawnPosition.x += direction * 0.2f;
-
-    GameObject arrow = Instantiate(arrowPrefab, spawnPosition, Quaternion.identity);
-
-    // تعیین جهت حرکت تیر
-    Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
-    if (arrowRb != null)
+    private void ShootArrow()
     {
-        arrowRb.linearVelocity = new Vector2(direction * arrowSpeed, 0f);
+        // تعیین جهت تیر بر اساس flipX کاراکتر
+        float direction = sprite.flipX ? -1f : 1f;
+
+        // موقعیت شروع تیر
+        Vector3 spawnPosition = shootPoint.position;
+        spawnPosition.x += direction * 0.2f;
+
+        GameObject arrow = Instantiate(arrowPrefab, spawnPosition, Quaternion.identity);
+
+        // تعیین جهت حرکت تیر
+        Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
+        if (arrowRb != null)
+        {
+            arrowRb.linearVelocity = new Vector2(direction * arrowSpeed, 0f);
+        }
+
+        // چرخش ظاهری تیر
+        SpriteRenderer arrowSprite = arrow.GetComponent<SpriteRenderer>();
+        if (arrowSprite != null)
+        {
+            arrowSprite.flipX = direction < 0;
+        }
     }
 
-    // چرخش ظاهری تیر
-    SpriteRenderer arrowSprite = arrow.GetComponent<SpriteRenderer>();
-    if (arrowSprite != null)
+    private bool isBoosted = false;
+
+    public IEnumerator TemporaryDamageBoost(int boostAmount, float duration)
     {
-        arrowSprite.flipX = direction < 0;
+        if (isBoosted) yield break; 
+        isBoosted = true ;
+        attackDamage += boostAmount;
+        Debug.Log("Boosted damage: " + attackDamage);
+
+        yield return new WaitForSeconds(duration);
+
+        attackDamage = baseDamage;
+        Debug.Log("Damage reset to: " + attackDamage);
+        isBoosted = false; 
     }
-}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

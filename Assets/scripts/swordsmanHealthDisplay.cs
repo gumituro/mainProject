@@ -15,13 +15,14 @@ public class SwordsmanHealthDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateHealthDisplay(); 
 
     }
 
     public void UpdateHealthDisplay()
     {
 
-        switch (HealthControler.instance.currentHealth)
+        switch (SwordsmanHealth.instance.SwordscurrentHealth)
         {
             case 30:
                 swordsmanHealthBar.sprite = bar10; break;
@@ -103,5 +104,6 @@ public class SwordsmanHealthDisplay : MonoBehaviour
 
 
         }
+
     }
 }

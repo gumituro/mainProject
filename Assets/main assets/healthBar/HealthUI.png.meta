@@ -647,7 +647,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HealthUI_0: 7928004021640426736
+      HealthUI_1: -5317887827840227842
+      HealthUI_10: 5398755302050122484
+      HealthUI_11: 2989497437838501577
+      HealthUI_12: 3285450023592689633
+      HealthUI_13: 8385021249363060821
+      HealthUI_14: 260599996631177045
+      HealthUI_15: 22708548628820992
+      HealthUI_16: 7652849623146442937
+      HealthUI_17: -1235989876300721736
+      HealthUI_18: 3656758161904011714
+      HealthUI_19: 5851866876762736742
+      HealthUI_2: 2930450890159999871
+      HealthUI_20: -2010668086930183781
+      HealthUI_3: 3636623378748699650
+      HealthUI_4: 7729739118708529550
+      HealthUI_5: -5604303487715832123
+      HealthUI_6: -5181469153440654655
+      HealthUI_7: -888568887353418511
+      HealthUI_8: 7549890845715501892
+      HealthUI_9: -8923311580912109398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

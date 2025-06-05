@@ -15,8 +15,20 @@ public class DamagePlayer : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            FindFirstObjectByType<HealthControler>().Damage();
-            // HealthControler.instance.Damage(); 
+
+        var swordsman = other.GetComponent<SwordsmanHealth>();
+        if (swordsman != null)
+        {
+            swordsman.Damage();
+            return;
+        }
+
+        var Archer = other.GetComponent<ArcherHealth>();
+        if (Archer != null)
+        {
+            Archer.Damage();
+            return;
+        }
         }
 
     }
