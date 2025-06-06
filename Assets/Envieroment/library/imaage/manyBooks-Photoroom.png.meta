@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: e3d72d80acbf74b4087d2075120b1309
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8043144973434084048
+    second: manyBooks-Photoroom_0
+  - first:
+      213: 6553644099183201974
+    second: manyBooks-Photoroom_1
+  - first:
+      213: 5538494944780134877
+    second: manyBooks-Photoroom_2
+  - first:
+      213: 2707673194662438718
+    second: manyBooks-Photoroom_3
+  - first:
+      213: 1826137068687996731
+    second: manyBooks-Photoroom_4
+  - first:
+      213: -3490166118535739308
+    second: manyBooks-Photoroom_5
+  - first:
+      213: 3788202369439127470
+    second: manyBooks-Photoroom_6
+  - first:
+      213: 4081829032515459229
+    second: manyBooks-Photoroom_7
+  - first:
+      213: -4987771075128195481
+    second: manyBooks-Photoroom_8
+  - first:
+      213: -7405278289684818789
+    second: manyBooks-Photoroom_9
+  - first:
+      213: 6481476496601305120
+    second: manyBooks-Photoroom_10
+  - first:
+      213: 1638700216129882755
+    second: manyBooks-Photoroom_11
+  - first:
+      213: 939714159586186233
+    second: manyBooks-Photoroom_12
+  - first:
+      213: 6439198628999169023
+    second: manyBooks-Photoroom_13
+  - first:
+      213: 3545109345927968444
+    second: manyBooks-Photoroom_14
+  - first:
+      213: 8325161249106177874
+    second: manyBooks-Photoroom_15
+  - first:
+      213: 3869303880970179028
+    second: manyBooks-Photoroom_16
+  - first:
+      213: 1759583060054084403
+    second: manyBooks-Photoroom_17
+  - first:
+      213: -3652040742459378848
+    second: manyBooks-Photoroom_18
+  - first:
+      213: 3093582790117087772
+    second: manyBooks-Photoroom_19
+  - first:
+      213: -4601289583959627685
+    second: manyBooks-Photoroom_20
+  - first:
+      213: -4564973071064513100
+    second: manyBooks-Photoroom_21
+  - first:
+      213: -7539195920573372386
+    second: manyBooks-Photoroom_22
+  - first:
+      213: -4950308643488140944
+    second: manyBooks-Photoroom_23
+  - first:
+      213: 4582614521606008607
+    second: manyBooks-Photoroom_24
+  - first:
+      213: -1084077951068050656
+    second: manyBooks-Photoroom_25
+  - first:
+      213: 7857084072574965871
+    second: manyBooks-Photoroom_26
+  - first:
+      213: -7523043236370925723
+    second: manyBooks-Photoroom_27
+  - first:
+      213: 8373561501984433132
+    second: manyBooks-Photoroom_28
+  - first:
+      213: -3174474554553986053
+    second: manyBooks-Photoroom_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 941
+        width: 125
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0352e75d242016090800000000000000
+      internalID: -8043144973434084048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1007
+        width: 114
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be4624e59833fa50800000000000000
+      internalID: 6553644099183201974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 989
+        width: 125
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9aaeddecfacdc40800000000000000
+      internalID: 5538494944780134877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 1000
+        width: 95
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37a3b7bc66939520800000000000000
+      internalID: 2707673194662438718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 825
+        width: 121
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37325a1dfdb75910800000000000000
+      internalID: 1826137068687996731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 846
+        width: 122
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458c2992860709fc0800000000000000
+      internalID: -3490166118535739308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 883
+        width: 114
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea756b7fbf5629430800000000000000
+      internalID: 3788202369439127470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 910
+        width: 118
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d98d5fce0e195a830800000000000000
+      internalID: 4081829032515459229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 719
+        width: 134
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766040e22a0e7cab0800000000000000
+      internalID: -4987771075128195481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 705
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b949c6061aa2b3990800000000000000
+      internalID: -7405278289684818789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_10
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 797
+        width: 101
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 020d6f78884d2f950800000000000000
+      internalID: 6481476496601305120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_11
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 773
+        width: 118
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a07c31a25ddb610800000000000000
+      internalID: 1638700216129882755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_12
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 623
+        width: 134
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f31a80ac098a0d00800000000000000
+      internalID: 939714159586186233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 623
+        width: 109
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff38da76901ac5950800000000000000
+      internalID: 6439198628999169023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 524
+        width: 140
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb634f5da22c23130800000000000000
+      internalID: 3545109345927968444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_15
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 606
+        width: 130
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f22d62c0ae88370800000000000000
+      internalID: 8325161249106177874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 457
+        width: 131
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d19449116782b530800000000000000
+      internalID: 3869303880970179028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 508
+        width: 106
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b815f687b4b6810800000000000000
+      internalID: 1759583060054084403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_18
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 407
+        width: 111
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06374784b48515dc0800000000000000
+      internalID: -3652040742459378848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_19
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 484
+        width: 148
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ad038382d9eea20800000000000000
+      internalID: 3093582790117087772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_20
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 226
+        width: 132
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58a167808fe420c0800000000000000
+      internalID: -4601289583959627685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_21
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 333
+        width: 116
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5c9f99d25f5a0c0800000000000000
+      internalID: -4564973071064513100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 226
+        width: 143
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18662e21456f5790800000000000000
+      internalID: -7539195920573372386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_23
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 375
+        width: 136
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071f7504488fc4bb0800000000000000
+      internalID: -4950308643488140944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_24
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 205
+        width: 82
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f6fdea0a7b89f30800000000000000
+      internalID: 4582614521606008607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_25
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 265
+        width: 124
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b61c1e8d494f0f0800000000000000
+      internalID: -1084077951068050656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 97
+        width: 129
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68d53cd558f90d60800000000000000
+      internalID: 7857084072574965871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_27
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 97
+        width: 88
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567b43a0908c89790800000000000000
+      internalID: -7523043236370925723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_28
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 97
+        width: 129
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce32bae22ddd43470800000000000000
+      internalID: 8373561501984433132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manyBooks-Photoroom_29
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 97
+        width: 137
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf31b43363002f3d0800000000000000
+      internalID: -3174474554553986053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      manyBooks-Photoroom_0: -8043144973434084048
+      manyBooks-Photoroom_1: 6553644099183201974
+      manyBooks-Photoroom_10: 6481476496601305120
+      manyBooks-Photoroom_11: 1638700216129882755
+      manyBooks-Photoroom_12: 939714159586186233
+      manyBooks-Photoroom_13: 6439198628999169023
+      manyBooks-Photoroom_14: 3545109345927968444
+      manyBooks-Photoroom_15: 8325161249106177874
+      manyBooks-Photoroom_16: 3869303880970179028
+      manyBooks-Photoroom_17: 1759583060054084403
+      manyBooks-Photoroom_18: -3652040742459378848
+      manyBooks-Photoroom_19: 3093582790117087772
+      manyBooks-Photoroom_2: 5538494944780134877
+      manyBooks-Photoroom_20: -4601289583959627685
+      manyBooks-Photoroom_21: -4564973071064513100
+      manyBooks-Photoroom_22: -7539195920573372386
+      manyBooks-Photoroom_23: -4950308643488140944
+      manyBooks-Photoroom_24: 4582614521606008607
+      manyBooks-Photoroom_25: -1084077951068050656
+      manyBooks-Photoroom_26: 7857084072574965871
+      manyBooks-Photoroom_27: -7523043236370925723
+      manyBooks-Photoroom_28: 8373561501984433132
+      manyBooks-Photoroom_29: -3174474554553986053
+      manyBooks-Photoroom_3: 2707673194662438718
+      manyBooks-Photoroom_4: 1826137068687996731
+      manyBooks-Photoroom_5: -3490166118535739308
+      manyBooks-Photoroom_6: 3788202369439127470
+      manyBooks-Photoroom_7: 4081829032515459229
+      manyBooks-Photoroom_8: -4987771075128195481
+      manyBooks-Photoroom_9: -7405278289684818789
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
