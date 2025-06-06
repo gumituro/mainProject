@@ -11,17 +11,21 @@ public class EnemyShooter : MonoBehaviour
     private float shootTimer;
 
     private void Update()
+{
+    if (currentTarget != null)
     {
-        if (currentTarget != null)
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0f)
         {
-            shootTimer -= Time.deltaTime;
-            if (shootTimer <= 0f)
-            {
-                ShootAtTarget();
-                shootTimer = shootInterval;
-            }
+            ShootAtTarget();
+            shootTimer = shootInterval;
         }
+
+        Vector2 direction = (currentTarget.position - shootPoint.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        shootPoint.rotation = Quaternion.Euler(0, 0, angle);
     }
+}
 
     private void ShootAtTarget()
     {
@@ -34,15 +38,18 @@ public class EnemyShooter : MonoBehaviour
             rb.linearVelocity = direction * shootSpeed;
         }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (currentTarget == null && other.CompareTag("Player"))
+        Debug.Log("Trigger Entered by: " + other.name);
+
+        if (other.CompareTag("Player"))
         {
+            Debug.Log("Player entered range");
             currentTarget = other.transform;
-            shootTimer = 0f; // برای شلیک سریع بعد از ورود
+            shootTimer = 0f;
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {

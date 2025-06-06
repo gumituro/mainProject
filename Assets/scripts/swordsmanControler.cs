@@ -1,8 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class SwordmanController : MonoBehaviour
 {
+    // public AttackTrigger attackTrigger;
+
+    // public Transform attackPoint;
+    public GameObject attackPoint;
+    public float radius;
+    public LayerMask enemies;
+
+    // public float attackRange = 0.5f;
+    public int attackDamage = 1;
+    public int baseDamage = 1;
+    public bool isDead = false;
+
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -13,7 +30,6 @@ public class SwordmanController : MonoBehaviour
     private Vector2 moveInput;
     private bool isGrounded = true;
     private bool isDashing = false;
-
     private float dashTime;
 
     private PlayerInput playerInput;
@@ -25,14 +41,16 @@ public class SwordmanController : MonoBehaviour
     public Animator anim;
     public SpriteRenderer sprite;
 
+
+    public GameObject gameOverScreen;
+
     void Start()
     {
-        if (anim == null)
-        {
-            anim = GetComponent<Animator>();
-        }
-    }
+        if (anim == null) anim = GetComponent<Animator>();
 
+
+
+    }
 
     private void Awake()
     {
@@ -48,6 +66,7 @@ public class SwordmanController : MonoBehaviour
         attackAction.performed += ctx => attack();
         dashAction.performed += ctx => Dash();
     }
+
 
     private void OnEnable()
     {
@@ -67,6 +86,8 @@ public class SwordmanController : MonoBehaviour
 
     private void Update()
     {
+
+
         moveInput = moveAction.ReadValue<Vector2>();
 
         if (isDashing)
@@ -78,17 +99,12 @@ public class SwordmanController : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
             }
         }
-        if (rb.linearVelocity.x < 0)
-        {
-            sprite.flipX = true;
-        }
-        else if (rb.linearVelocity.x > 0)
-        {
-            sprite.flipX = false;
-        }
+
+        sprite.flipX = rb.linearVelocity.x < 0;
 
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
+
 
     }
 
@@ -125,12 +141,92 @@ public class SwordmanController : MonoBehaviour
 
     private void attack()
     {
-        if (!isDashing && isGrounded)
+
+        anim.SetTrigger("attack");
+
+        // if (enemyInRange == false)
+        // {
+        //     Debug.Log("enemy not found");
+        // }
+
+        // if (enemyInRange == true && currentEnemy != null)
+        // {
+        //     Debug.Log("enemy in range");
+
+        //     Enemy1Health enemy1 = currentEnemy.GetComponent<Enemy1Health>(); // هلث انمی حرکتی قرار داده شد
+
+        //     if (enemy1 != null)
+        //     {
+        //         // Debug.Log("");
+        //         enemy1.TakeDamage(attackDamage);
+        //     }
+
+        // }
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius , enemies);
+
+        foreach (Collider2D Enemy in hitEnemies)
         {
-            anim.SetTrigger("attack");
-            Debug.Log("Attack Triggered");
+            Debug.Log("hit enemy");
+
+            // Enemy.GetComponent<Enemy1Health>()?.TakeDamage(attackDamage);
         }
+
+
     }
+
+
+
+    void OnDrawGizmos()
+    {
+        if (attackPoint == null) return;
+
+        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
+        Gizmos.color = Color.red;
+    }
+
+
+
+
+
+
+    // public void die()
+    // {
+    //     isDead = true; 
+    //     anim.SetTrigger("dead");
+
+    // }
+    // public bool enemyInRange = false;
+    // public GameObject currentEnemy = null;
+
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //         Debug.Log("Trigger entered with: " + other.name);
+
+    //     if (other.CompareTag("Enemy"))
+    //     {
+    //         enemyInRange = true;
+    //         currentEnemy = other.gameObject;
+
+    //     }
+    // }
+
+
+
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Enemy"))
+    //     {
+    //         if (other.gameObject == currentEnemy)
+
+    //             enemyInRange = false;
+    //         currentEnemy = null;
+
+    //     }
+    // }
+
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -140,6 +236,11 @@ public class SwordmanController : MonoBehaviour
         }
     }
 
+
+
+
+
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -147,19 +248,23 @@ public class SwordmanController : MonoBehaviour
             isGrounded = false;
         }
     }
-       public void TakeDamage()
+    private bool isBoosted = false;
+
+    public IEnumerator TemporaryDamageBoost(int boostAmount, float duration)
     {
-        anim.SetTrigger("hurt");
-        //این قسمت برای کاهش جون
-        Debug.Log("Character took damage!");
+        if (isBoosted) yield break;
+        isBoosted = true;
+        attackDamage += boostAmount;
+        Debug.Log("Boosted damage: " + attackDamage);
+
+        yield return new WaitForSeconds(duration);
+
+        attackDamage = baseDamage;
+        Debug.Log("Damage reset to: " + attackDamage);
+        isBoosted = false;
     }
 
-//تست برای تیک دمچ
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("EnemyAttack"))
-        {
-            TakeDamage();
-        }
-    }
+
+
+
 }

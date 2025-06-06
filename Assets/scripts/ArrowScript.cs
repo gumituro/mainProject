@@ -3,6 +3,7 @@ using UnityEngine;
 public class ArrowScript : MonoBehaviour
 {
     public float speed = 2;
+    // ArcherController archer; 
 
     void Update()
     {
@@ -11,7 +12,15 @@ public class ArrowScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // برخورد با دشمن 
+        if (collision.CompareTag("Enemy"))
+        {
+            var enemy1 = collision.GetComponent<Enemy1Health>();
+            if (enemy1 != null)
+            {
+                enemy1.TakeDamage(1); //i couldnt set it to attackDamage in archerController
+            }
+            
+        }
         Destroy(gameObject);
     }
 }

@@ -5,21 +5,18 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
-  - Stair
-  - hall
-  - boundry
-  - newChunk
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - palyerArcher
+  - PlayerArcher
   - Water
   - UI
-  - playerSwordsman
-  - arrow
-  - archCamera
-  - swordCamera
+  - PlayerSwordsman
+  - ArcherArrow
+  - Enemy
+  - 
   - 
   - 
   - 
