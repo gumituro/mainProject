@@ -197,10 +197,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< Updated upstream
     nameFileIdTable:
       table2-Photoroom_0: 2351338195215603198
       table2-Photoroom_1: -5369365162963241940
       table2-Photoroom_2: 2273594087931413147
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

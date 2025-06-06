@@ -2,22 +2,20 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
-    }
-
-    void Update()
-    {
-
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+<<<<<<< Updated upstream
             //FindFirstObjectByType<HealthControler>().Damage();
             // HealthControler.instance.Damage(); 
+=======
+            HealthControler health = other.GetComponent<HealthControler>();
+            if (health != null)
+            {
+                health.Damage();
+            }
+>>>>>>> Stashed changes
         }
-
     }
 }

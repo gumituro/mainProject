@@ -1734,9 +1734,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_IsActive: 0
 --- !u!4 &1771115004
 =======
+=======
+>>>>>>> Stashed changes
   m_IsActive: 1
 --- !u!95 &2087968279
 Animator:
@@ -2080,6 +2083,7 @@ PrefabInstance:
     - target: {fileID: 7294672995196002437, guid: 9fd2ed6a6e126ea4688f08c291141d85, type: 3}
       propertyPath: m_IsActive
       value: 0
+<<<<<<< Updated upstream
       objectReference: {fileID: 0}
 >>>>>>> Stashed changes
     m_RemovedComponents: []
@@ -2122,6 +2126,8 @@ PrefabInstance:
     - target: {fileID: 4482088128481961460, guid: 61879596c1920e1429e2abfb0bf7742b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+=======
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4482088128481961460, guid: 61879596c1920e1429e2abfb0bf7742b, type: 3}
       propertyPath: m_LocalRotation.x

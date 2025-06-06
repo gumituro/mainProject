@@ -772,6 +772,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< Updated upstream
     nameFileIdTable:
       letter-Photoroom_0: 7987482711715354099
       letter-Photoroom_1: 1599676928600734446
@@ -799,6 +800,9 @@ TextureImporter:
       letter-Photoroom_7: 7811332617399616389
       letter-Photoroom_8: 2190243583826442620
       letter-Photoroom_9: -3306651501870633538
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

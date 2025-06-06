@@ -130,6 +130,22 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -322,7 +338,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< Updated upstream
     nameFileIdTable:
+<<<<<<<< Updated upstream:Assets/Envieroment/library/imaage/chair-Photoroom.png.meta
       chair-Photoroom_0: 6933721765496328744
       chair-Photoroom_1: -5041995817835825223
       chair-Photoroom_2: 933104780980785800
@@ -331,6 +349,19 @@ TextureImporter:
       chair-Photoroom_5: 1703234968611070523
       chair-Photoroom_6: -7091744415514009503
       chair-Photoroom_7: -2203399195985710700
+========
+      NewObject-1-9_0: -7000748701501301096
+      NewObject-1-9_1: -3983867510773874322
+      NewObject-1-9_2: 6949096451669015674
+      NewObject-1-9_3: 721953686879936990
+      NewObject-1-9_4: -2225305900113535290
+      NewObject-1-9_5: -2450356485385640983
+      NewObject-1-9_6: -3431042713056775270
+      NewObject-1-9_7: -7507241742101551134
+>>>>>>>> Stashed changes:Assets/main assets/ScreenDisplays/NewObject-1-9.png.meta
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

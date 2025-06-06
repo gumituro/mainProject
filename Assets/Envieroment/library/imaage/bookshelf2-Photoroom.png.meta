@@ -160,6 +160,22 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -572,7 +588,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< Updated upstream
     nameFileIdTable:
+<<<<<<<< Updated upstream:Assets/Envieroment/library/imaage/bookshelf2-Photoroom.png.meta
       bookshelf2-Photoroom_0: 6325429067966426845
       bookshelf2-Photoroom_1: -3091621886669460206
       bookshelf2-Photoroom_10: 8379409453808782793
@@ -591,6 +609,32 @@ TextureImporter:
       bookshelf2-Photoroom_7: -8401746193343756508
       bookshelf2-Photoroom_8: 7293025370447836761
       bookshelf2-Photoroom_9: 9148795611907939051
+========
+      HealthUI_0: 7928004021640426736
+      HealthUI_1: -5317887827840227842
+      HealthUI_10: 5398755302050122484
+      HealthUI_11: 2989497437838501577
+      HealthUI_12: 3285450023592689633
+      HealthUI_13: 8385021249363060821
+      HealthUI_14: 260599996631177045
+      HealthUI_15: 22708548628820992
+      HealthUI_16: 7652849623146442937
+      HealthUI_17: -1235989876300721736
+      HealthUI_18: 3656758161904011714
+      HealthUI_19: 5851866876762736742
+      HealthUI_2: 2930450890159999871
+      HealthUI_20: -2010668086930183781
+      HealthUI_3: 3636623378748699650
+      HealthUI_4: 7729739118708529550
+      HealthUI_5: -5604303487715832123
+      HealthUI_6: -5181469153440654655
+      HealthUI_7: -888568887353418511
+      HealthUI_8: 7549890845715501892
+      HealthUI_9: -8923311580912109398
+>>>>>>>> Stashed changes:Assets/main assets/healthBar/HealthUI.png.meta
+=======
+    nameFileIdTable: {}
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
