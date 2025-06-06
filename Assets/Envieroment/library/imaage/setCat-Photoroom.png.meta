@@ -297,7 +297,6 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< Updated upstream
     nameFileIdTable:
       setCat-Photoroom_0: -4641333347130276601
       setCat-Photoroom_1: 6690224001939810338
@@ -306,9 +305,6 @@ TextureImporter:
       setCat-Photoroom_4: -5168922587620750019
       setCat-Photoroom_5: 7753656588852395655
       setCat-Photoroom_6: -872265930601302400
-=======
-    nameFileIdTable: {}
->>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

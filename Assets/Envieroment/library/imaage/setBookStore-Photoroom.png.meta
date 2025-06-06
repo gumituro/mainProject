@@ -372,7 +372,6 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< Updated upstream
     nameFileIdTable:
       setBookStore-Photoroom_0: -2205941389532228614
       setBookStore-Photoroom_1: 1973153813134688686
@@ -384,9 +383,6 @@ TextureImporter:
       setBookStore-Photoroom_7: -8326110394810796834
       setBookStore-Photoroom_8: -3919353790204061506
       setBookStore-Photoroom_9: 6377017027142836701
-=======
-    nameFileIdTable: {}
->>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
