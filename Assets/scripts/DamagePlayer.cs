@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
+
     void Start()
     {
 
@@ -33,3 +34,4 @@ public class DamagePlayer : MonoBehaviour
 
     }
 }
+
