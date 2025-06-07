@@ -30,7 +30,7 @@ public class HealthControler : MonoBehaviour
         if (Time.time - lastDamageTime >= damageCooldown)
         {
             currentHealth--;
-            UIcontroller.instance?.UpdateHealthDisplay(); // در صورت وجود
+            //UIcontroller.instance?.UpdateHealthDisplay(); // در صورت وجود
             lastDamageTime = Time.time;
 
             Debug.Log($"{gameObject.name} took damage. Current Health: {currentHealth}");
