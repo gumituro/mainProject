@@ -29,7 +29,6 @@ public class ArcherHealth : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void Damage()
     {
         anim.SetTrigger("hurt");
@@ -43,16 +42,15 @@ public class ArcherHealth : MonoBehaviour
             if (ArchercurrentHealth <= 0)
             {
                 ArchercurrentHealth = 0;
+                anim.SetTrigger("death");
                 Debug.Log("Archer Died!"); //dead anim isnt applied
+
                 // StartCoroutine(RestartScene());
 
             }
         }
     }
-    void Update()
-    {
 
-    }
     public void heal()
     {
         Debug.Log("Archer healed");

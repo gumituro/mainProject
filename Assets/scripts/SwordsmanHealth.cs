@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class SwordsmanHealth : MonoBehaviour
 {
     public static SwordsmanHealth instance;
-    public float SwordsmaxHealth= 30 ;
+    public float SwordsmaxHealth = 30;
     public float SwordscurrentHealth;
     Animator anim;
 
@@ -14,7 +14,7 @@ public class SwordsmanHealth : MonoBehaviour
 
     // public SwordmanController swordmanController;
 
-    private float SwordsdamageCooldown = 1f; // زمان بین دو دمج
+    private float SwordsdamageCooldown = 0.8f;
     private float SwordslastDamageTime;
 
     void Start()
@@ -25,7 +25,6 @@ public class SwordsmanHealth : MonoBehaviour
         SwordslastDamageTime = -SwordsdamageCooldown;
     }
 
-    // Update is called once per frame
     public void Damage()
     {
         anim.SetTrigger("hurt");
@@ -41,6 +40,8 @@ public class SwordsmanHealth : MonoBehaviour
             if (SwordscurrentHealth <= 0)
             {
                 SwordscurrentHealth = 0;
+                anim.SetTrigger("death");
+
                 Debug.Log("Swordsman Died!"); //dead anim isnt applied
 
                 // swordmanController.die();

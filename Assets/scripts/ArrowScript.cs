@@ -15,12 +15,18 @@ public class ArrowScript : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             var enemy1 = collision.GetComponent<Enemy1Health>();
+            var enemy2 = collision.GetComponent<Enemy2Health>();
             if (enemy1 != null)
             {
                 enemy1.TakeDamage(1); //i couldnt set it to attackDamage in archerController
             }
-            
+            else if (enemy2 != null)
+            {
+                enemy2.TakeDamage(1);
+            }            
         }
+
+
         Destroy(gameObject);
     }
 }

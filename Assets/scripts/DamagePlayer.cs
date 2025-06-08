@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
+    public Animator anim;
 
     void Start()
     {
@@ -24,12 +25,22 @@ public class DamagePlayer : MonoBehaviour
             return;
         }
 
-        var Archer = other.GetComponent<ArcherHealth>();
-        if (Archer != null)
-        {
-            Archer.Damage();
-            return;
-        }
+            
+            anim.SetTrigger("attack");
+
+            var swordsman = other.GetComponent<SwordsmanHealth>();
+            if (swordsman != null)
+            {
+                swordsman.Damage();
+                return;
+            }
+
+            var Archer = other.GetComponent<ArcherHealth>();
+            if (Archer != null)
+            {
+                Archer.Damage();
+                return;
+            }
         }
 
     }

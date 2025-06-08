@@ -127,6 +127,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -297,7 +310,6 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< Updated upstream
     nameFileIdTable:
       shelfEmpty-Photoroom_0: 2623595999896825586
       shelfEmpty-Photoroom_1: -8442058905639732033
@@ -306,9 +318,6 @@ TextureImporter:
       shelfEmpty-Photoroom_4: 8322258417256821344
       shelfEmpty-Photoroom_5: -2777765678737260121
       shelfEmpty-Photoroom_6: 7220532596329685875
-=======
-    nameFileIdTable: {}
->>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

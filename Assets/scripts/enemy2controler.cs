@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class enemy2controler : MonoBehaviour
 {
-    public float fireRate = 1f; 
+    public float fireRate = 1f;
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 10f;
+    public dangerArea dangerArea;
 
-    private Transform target;
+    // private Transform target;
     private float fireTimer = 0f;
-    public Boolean ViewIsRight; 
+    public Boolean ViewIsRight;
+    // Animator anim; 
 
     void Update()
     {
-        if (target != null)
+
+        if (dangerArea.instance.target != null)
         {
 
             if (ViewIsRight)
             {
                 // gameObject.transform.rotation.y = 180f; 
-                transform.rotation = Quaternion.Euler(0 , 180f , 0); 
-            }         
+                transform.rotation = Quaternion.Euler(0, 180f, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
 
             fireTimer += Time.deltaTime;
             if (fireTimer >= fireRate)
@@ -35,46 +42,14 @@ public class enemy2controler : MonoBehaviour
 
     void Shoot()
     {
-            Debug.Log("Shooting!");
+                AudioManager.instance.PlaySFX(1);
 
+
+        Vector2 direction = (dangerArea.instance.target.transform.position - firePoint.position).normalized;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = firePoint.right * bulletSpeed;
-        }
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed;
+
+       
     }
 
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (other.transform.position.x > gameObject.transform.position.x)
-            {
-                ViewIsRight = true;
-            }
-            else
-            {
-                ViewIsRight = false; 
-            }
-
-            //  Debug.Log("Player is in range");
-
-            target = other.transform;
-        }
-    }
-
-
-
-
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && other.transform == target)
-        {
-            target = null;
-        }
-    }
 }

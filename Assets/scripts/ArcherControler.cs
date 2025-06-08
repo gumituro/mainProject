@@ -58,7 +58,6 @@ public class ArcherController : MonoBehaviour
         jumpAction.performed += ctx => Jump();
         doubleJumpAction.performed += ctx => DoubleJump();
         attackAction.performed += ctx => Attack();
-        downDashAction.performed += ctx => DashDown();
     }
 
     private void OnEnable()
@@ -89,17 +88,11 @@ public class ArcherController : MonoBehaviour
             sprite.flipX = false;
 
 
-        // // Flip sprite based on movement or velocity
-        // if (rb.velocity.x < 0)
-        //     sprite.flipX = true;
-        // else if (rb.velocity.x > 0)
-        //     sprite.flipX = false;
 
         // Animation states
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
 
-        // Enable double jump if grounded
         if (isGrounded)
         {
             canDoubleJump = true;
@@ -115,6 +108,8 @@ public class ArcherController : MonoBehaviour
     {
         if (isGrounded)
         {
+            AudioManager.instance.PlaySFX(10);
+
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
             canDoubleJump = true;
@@ -123,13 +118,14 @@ public class ArcherController : MonoBehaviour
 
     private void DoubleJump()
     {
+        AudioManager.instance.PlaySFX(11);
+
         if (canDoubleJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
             canDoubleJump = false;
         }
 
-        Debug.Log("Double jump key pressed");
     }
 
     private void Attack()
@@ -142,16 +138,7 @@ public class ArcherController : MonoBehaviour
         Invoke(nameof(ShootArrow), 0.8f); // Delay before shooting arrow
     }
     
-    private void DashDown() {
-        // if (!isGrounded)
-        //     rb.linearVelocity = new Vector2(rb.linearVelocity.x, -jumpForce * 1.5f);
-        if (isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -jumpForce);
-            isGrounded = false;
-        }
-        Debug.Log("DashDown key pressed");
-    }
+
 
     private void ResetShoot()
     {
@@ -160,6 +147,7 @@ public class ArcherController : MonoBehaviour
 
     private void ShootArrow()
     {
+        AudioManager.instance.PlaySFX(0);
         // تعیین جهت تیر بر اساس flipX کاراکتر
         float direction = sprite.flipX ? -1f : 1f;
 
@@ -184,12 +172,12 @@ public class ArcherController : MonoBehaviour
         }
     }
 
-    private bool isBoosted = false;
+    // private bool isBoosted = false;
 
     public IEnumerator TemporaryDamageBoost(int boostAmount, float duration)
     {
-        if (isBoosted) yield break; 
-        isBoosted = true ;
+        // if (isBoosted) yield break; 
+        // isBoosted = true ;
         attackDamage += boostAmount;
         Debug.Log("Boosted damage: " + attackDamage);
 
@@ -197,7 +185,7 @@ public class ArcherController : MonoBehaviour
 
         attackDamage = baseDamage;
         Debug.Log("Damage reset to: " + attackDamage);
-        isBoosted = false; 
+        // isBoosted = false; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -223,11 +211,5 @@ public class ArcherController : MonoBehaviour
         Debug.Log("Character took damage!");
     }
 
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("EnemyAttack"))
-    //     {
-    //         TakeDamage();
-    //     }
-    // }
+
 }

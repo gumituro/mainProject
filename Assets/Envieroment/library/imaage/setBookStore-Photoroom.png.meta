@@ -136,6 +136,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -372,7 +385,6 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< Updated upstream
     nameFileIdTable:
       setBookStore-Photoroom_0: -2205941389532228614
       setBookStore-Photoroom_1: 1973153813134688686
@@ -384,9 +396,6 @@ TextureImporter:
       setBookStore-Photoroom_7: -8326110394810796834
       setBookStore-Photoroom_8: -3919353790204061506
       setBookStore-Photoroom_9: 6377017027142836701
-=======
-    nameFileIdTable: {}
->>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

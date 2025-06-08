@@ -6,9 +6,9 @@ public class SwordsPickUp : MonoBehaviour
 {
     public bool isHealthDrop;
     public bool isDamageDrop;
-    public bool isKey; 
+    public bool isKey;
     public int boostAmount = 2;
-    public float boostDuration = 10f; 
+    public float boostDuration = 2f;
     private bool isCollected = false;
 
 
@@ -22,7 +22,7 @@ public class SwordsPickUp : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isCollected)
         {
@@ -34,6 +34,7 @@ public class SwordsPickUp : MonoBehaviour
                 if (isHealthDrop)
                 {
                     isCollected = true;
+                    AudioManager.instance.PlaySFX(5);
                     Destroy(gameObject);
 
                     if (SwordsmanHealth.instance.SwordscurrentHealth != 30 && SwordsmanHealth.instance.SwordscurrentHealth != 20 && SwordsmanHealth.instance.SwordscurrentHealth != 10)
@@ -47,12 +48,15 @@ public class SwordsPickUp : MonoBehaviour
 
                 if (isDamageDrop)
                 {
+
                     isCollected = true;
-                    StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
-                    // gameObject.SetActive(false); 
+                    playerAttack.StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
+                    AudioManager.instance.PlaySFX(4);
+
+                    gameObject.SetActive(false);
 
                 }
-                
+
                 if (isKey)
                 {
                     isCollected = true;

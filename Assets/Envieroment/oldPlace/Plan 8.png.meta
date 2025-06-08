@@ -122,6 +122,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -161,11 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< Updated upstream:Assets/Envieroment/oldPlace/Plan 8.png.meta
       Plan 8_0: 1092198657659942393
-========
-      NewFile-1_0: -4298813873025533843
->>>>>>>> Stashed changes:Assets/main assets/ScreenDisplays/NewFile-1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,7 +26,6 @@ public class shoot : MonoBehaviour
             {
                 swordsman.Damage();
                 UIcontrollerSword.instance.UpdateHealthDisplay();
-                Debug.Log("bat hitted swordsman!!!");
                 Destroy(gameObject);
 
                 return;
@@ -36,7 +35,6 @@ public class shoot : MonoBehaviour
             {
                 Archer.Damage();
                 UIcontrollerArcher.instance.UpdateHealthDisplay();
-                Debug.Log("bat hitted swordsman!!!");
                 Destroy(gameObject); 
                 return;
             }

@@ -6,7 +6,9 @@ public class ArcherPickUp : MonoBehaviour
 {
     public bool isHealthDrop;
     public bool isDamageDrop;
-    bool isCollected = false;
+    public bool isKey;
+
+    private bool isCollected = false;
 
     public int boostAmount = 2; // چقدر اتک قوی‌تر بشه
     public float boostDuration = 10f; //چند ثانیه قوی تر شه
@@ -21,7 +23,7 @@ public class ArcherPickUp : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isCollected)
         {
@@ -30,6 +32,8 @@ public class ArcherPickUp : MonoBehaviour
             {
                 if (isHealthDrop)
                     isCollected = true;
+                AudioManager.instance.PlaySFX(5);
+
                 Destroy(gameObject);
 
                 {
@@ -44,10 +48,20 @@ public class ArcherPickUp : MonoBehaviour
                 if (isDamageDrop)
                 {
                     isCollected = true;
-                    StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
-                    // gameObject.SetActive(false); 
+                    playerAttack.StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
+                            AudioManager.instance.PlaySFX(4);
+
+                    gameObject.SetActive(false);
 
                 }
+                if (isKey)
+                {
+                    isCollected = true;
+                    levelManager.instance.GemCollected++;
+                    Destroy(gameObject);
+                    Debug.Log("gem collected. collected gems count: " + levelManager.instance.GemCollected);
+                }
+
 
             }
         }

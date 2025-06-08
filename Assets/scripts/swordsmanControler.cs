@@ -9,12 +9,11 @@ public class SwordmanController : MonoBehaviour
 {
     // public AttackTrigger attackTrigger;
 
-    // public Transform attackPoint;
-    public GameObject attackPoint;
-    public float radius;
+    public Transform attackPoint;
+    public Transform attackArea;
     public LayerMask enemies;
 
-    // public float attackRange = 0.5f;
+    public float attackRange = 0.5f;
     public int attackDamage = 1;
     public int baseDamage = 1;
     public bool isDead = false;
@@ -47,6 +46,8 @@ public class SwordmanController : MonoBehaviour
     void Start()
     {
         if (anim == null) anim = GetComponent<Animator>();
+        enemies = LayerMask.GetMask("Enemy");
+
 
 
 
@@ -90,6 +91,11 @@ public class SwordmanController : MonoBehaviour
 
         moveInput = moveAction.ReadValue<Vector2>();
 
+        if (moveInput.x < 0)
+            sprite.flipX = true;
+        else if (moveInput.x > 0)
+            sprite.flipX = false;
+
         if (isDashing)
         {
             dashTime -= Time.deltaTime;
@@ -100,7 +106,7 @@ public class SwordmanController : MonoBehaviour
             }
         }
 
-        sprite.flipX = rb.linearVelocity.x < 0;
+        // sprite.flipX = rb.linearVelocity.x < 0;
 
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
@@ -120,6 +126,8 @@ public class SwordmanController : MonoBehaviour
     {
         if (isGrounded && !isDashing)
         {
+            AudioManager.instance.PlaySFX(10);
+
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
         }
@@ -143,33 +151,24 @@ public class SwordmanController : MonoBehaviour
     {
 
         anim.SetTrigger("attack");
+        AudioManager.instance.PlaySFX(3);
 
-        // if (enemyInRange == false)
-        // {
-        //     Debug.Log("enemy not found");
-        // }
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackArea.transform.position, attackRange, enemies);
 
-        // if (enemyInRange == true && currentEnemy != null)
-        // {
-        //     Debug.Log("enemy in range");
-
-        //     Enemy1Health enemy1 = currentEnemy.GetComponent<Enemy1Health>(); // هلث انمی حرکتی قرار داده شد
-
-        //     if (enemy1 != null)
-        //     {
-        //         // Debug.Log("");
-        //         enemy1.TakeDamage(attackDamage);
-        //     }
-
-        // }
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius , enemies);
-
-        foreach (Collider2D Enemy in hitEnemies)
+        foreach (Collider2D enemies in hitEnemies)
         {
             Debug.Log("hit enemy");
 
-            // Enemy.GetComponent<Enemy1Health>()?.TakeDamage(attackDamage);
+            var enemy1 = enemies.GetComponent<Enemy1Health>();
+            var enemy2 = enemies.GetComponent<Enemy2Health>();
+            if (enemy1 != null)
+            {
+                enemy1.TakeDamage(attackDamage);
+            }
+            else if (enemy2 != null)
+            {
+                enemy2.TakeDamage(attackDamage);
+            }
         }
 
 
@@ -181,8 +180,8 @@ public class SwordmanController : MonoBehaviour
     {
         if (attackPoint == null) return;
 
-        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
         Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.transform.position, attackRange);
     }
 
 
@@ -248,20 +247,24 @@ public class SwordmanController : MonoBehaviour
             isGrounded = false;
         }
     }
-    private bool isBoosted = false;
+
+    // private bool isBoosted = false;
 
     public IEnumerator TemporaryDamageBoost(int boostAmount, float duration)
     {
-        if (isBoosted) yield break;
-        isBoosted = true;
+        // if (isBoosted) yield break;
+        // isBoosted = true;
         attackDamage += boostAmount;
         Debug.Log("Boosted damage: " + attackDamage);
 
         yield return new WaitForSeconds(duration);
 
+
         attackDamage = baseDamage;
         Debug.Log("Damage reset to: " + attackDamage);
-        isBoosted = false;
+        // isBoosted = false;
+        
+
     }
 
 
