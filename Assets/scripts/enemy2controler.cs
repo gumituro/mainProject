@@ -12,24 +12,33 @@ public class enemy2controler : MonoBehaviour
     private float fireTimer = 0f;
     public Boolean ViewIsRight; 
 
+
     void Update()
+{
+    if (DangerArea.instance.target != null)
     {
-        if (DangerArea.instance.target != null)
+        Vector3 targetPosition = DangerArea.instance.target.position;
+
+        if (targetPosition.x > transform.position.x)
         {
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
+            ViewIsRight = true;
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            ViewIsRight = false;
+        }
 
-            if (ViewIsRight)
-            {
-                transform.rotation = Quaternion.Euler(0 , 180f , 0); 
-            }         
-
-            fireTimer += Time.deltaTime;
-            if (fireTimer >= fireRate)
-            {
-                Shoot();
-                fireTimer = 0f;
-            }
+        fireTimer += Time.deltaTime;
+        if (fireTimer >= fireRate)
+        {
+            Shoot();
+            fireTimer = 0f;
         }
     }
+}
+
 
 
 void Shoot()

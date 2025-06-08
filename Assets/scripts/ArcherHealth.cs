@@ -44,7 +44,7 @@ public class ArcherHealth : MonoBehaviour
             {
                 ArchercurrentHealth = 0;
                 Debug.Log("Archer Died!"); //dead anim isnt applied
-                // StartCoroutine(RestartScene());
+                StartCoroutine(RestartScene());
 
             }
         }
@@ -88,10 +88,10 @@ public class ArcherHealth : MonoBehaviour
         UIcontrollerArcher.instance.UpdateHealthDisplay();
     }
 
-    // IEnumerator RestartScene()
-    // {
-    //     yield return new WaitForSeconds(10 * Time.deltaTime);
-    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    // }
+    IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(10 * Time.deltaTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 

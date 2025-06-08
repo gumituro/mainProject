@@ -44,21 +44,18 @@ public class SwordsmanHealth : MonoBehaviour
                 Debug.Log("Swordsman Died!"); //dead anim isnt applied
 
                 // swordmanController.die();
-                // StartCoroutine(RestartScene());
+                StartCoroutine(RestartScene());
 
             }
         }
     }
 
-    void Update()
-    {
 
+    IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(10 * Time.deltaTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    // IEnumerator RestartScene()
-    // {
-    //     yield return new WaitForSeconds(10 * Time.deltaTime);
-    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    // }
     public void heal()
     {
 
