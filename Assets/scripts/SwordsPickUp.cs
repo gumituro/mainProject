@@ -33,6 +33,8 @@ public class SwordsPickUp : MonoBehaviour
 
                 if (isHealthDrop)
                 {
+                                    AudioManager.instance.PlaySFX(5);
+
                     isCollected = true;
                     Destroy(gameObject);
 
@@ -47,6 +49,8 @@ public class SwordsPickUp : MonoBehaviour
 
                 if (isDamageDrop)
                 {
+                                    AudioManager.instance.PlaySFX(4);
+
                     isCollected = true;
                     playerAttack.StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
                     gameObject.SetActive(false); 
@@ -55,6 +59,8 @@ public class SwordsPickUp : MonoBehaviour
                 
                 if (isKey)
                 {
+                                    AudioManager.instance.PlaySFX(6);
+
                     isCollected = true;
                     levelManager.instance.GemCollected++;
                     Destroy(gameObject);

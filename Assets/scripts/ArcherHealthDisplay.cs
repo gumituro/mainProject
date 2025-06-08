@@ -47,6 +47,8 @@ public class ArcherHealthDisplay : MonoBehaviour
 
 
             case 20:
+                            AudioManager.instance.PlaySFX(9);
+
                 ArcherHealthBar.sprite = bar0;
                 ArcherHealthBar.sprite = bar10;
                 break;
@@ -71,6 +73,8 @@ public class ArcherHealthDisplay : MonoBehaviour
 
 
             case 10:
+                            AudioManager.instance.PlaySFX(9);
+
                 ArcherHealthBar.sprite = bar0;
                 ArcherHealthBar.sprite = bar10;
                 break;
@@ -95,6 +99,8 @@ public class ArcherHealthDisplay : MonoBehaviour
                 ArcherHealthBar.sprite = bar1; break;
 
             case 0:
+                            AudioManager.instance.PlaySFX(9);
+
                 ArcherHealthBar.sprite = bar0; break;
             default:
                 ArcherHealthBar.sprite = bar0; break;

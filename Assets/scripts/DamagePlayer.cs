@@ -19,7 +19,7 @@ public class DamagePlayer : MonoBehaviour
         {
             anim.SetTrigger("attack");
 
-            // AudioManager.instance.PlaySFX(2);
+            AudioManager.instance.PlaySFX(3);
 
             var Archer = other.GetComponent<ArcherHealth>();
             var swordsman = other.GetComponent<SwordsmanHealth>();

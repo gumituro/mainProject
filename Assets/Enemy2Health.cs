@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy2Health : MonoBehaviour
 {
     public int health = 3;
+    public Animator anim;
 
     public void TakeDamage(int damage)
     {
@@ -18,6 +19,13 @@ public class Enemy2Health : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died!");
-        Destroy(gameObject); //or any anims 
+        anim.SetTrigger("death");
+
+        AudioManager.instance.PlaySFX(7);
+
+    }
+    void deathAnim()
+    {
+        Destroy(gameObject);
     }
 }

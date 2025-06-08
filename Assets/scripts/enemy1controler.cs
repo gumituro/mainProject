@@ -16,7 +16,6 @@ public class enemy1controler : MonoBehaviour
         posA = pointA.position;
         posB = pointB.position;
 
-        // گرفتن SpriteRenderer
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
         {
@@ -28,23 +27,20 @@ public class enemy1controler : MonoBehaviour
     {
         Vector3 target = movingToB ? posB : posA;
 
-        // حرکت به سمت هدف
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
-        // چک کردن اتمام مسیر
         if (Vector3.Distance(transform.position, target) < 0.01f)
         {
             movingToB = !movingToB;
         }
 
-        // چرخش اسپریت در جهت حرکت
         if (target.x > transform.position.x)
         {
-            spriteRenderer.flipX = false; // نگاه به راست
+            spriteRenderer.flipX = false; 
         }
         else if (target.x < transform.position.x)
         {
-            spriteRenderer.flipX = true; // نگاه به چپ
+            spriteRenderer.flipX = true; 
         }
     }
 }

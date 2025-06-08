@@ -44,6 +44,8 @@ public class enemy2controler : MonoBehaviour
 void Shoot()
 {
     if (DangerArea.instance.target == null) return;
+                    AudioManager.instance.PlaySFX(2);
+
 
     Vector2 direction = (DangerArea.instance.target.position - firePoint.position).normalized;
 

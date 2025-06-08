@@ -47,6 +47,7 @@ public class SwordsmanHealthDisplay : MonoBehaviour
 
 
             case 20:
+                AudioManager.instance.PlaySFX(9);
                 swordsmanHealthBar.sprite = bar0;
                 swordsmanHealthBar.sprite = bar10;
                 break;
@@ -71,6 +72,8 @@ public class SwordsmanHealthDisplay : MonoBehaviour
 
 
             case 10:
+                            AudioManager.instance.PlaySFX(9);
+
                 swordsmanHealthBar.sprite = bar0;
                 swordsmanHealthBar.sprite = bar10;
                 break;
@@ -95,6 +98,8 @@ public class SwordsmanHealthDisplay : MonoBehaviour
                 swordsmanHealthBar.sprite = bar1; break;
 
             case 0:
+                            AudioManager.instance.PlaySFX(9);
+
                 swordsmanHealthBar.sprite = bar0; break;
             default:
                 swordsmanHealthBar.sprite = bar0; break;

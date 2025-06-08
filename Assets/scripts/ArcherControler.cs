@@ -116,6 +116,8 @@ public class ArcherController : MonoBehaviour
         if (isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                            AudioManager.instance.PlaySFX(10);
+
             isGrounded = false;
             canDoubleJump = true;
         }
@@ -126,6 +128,8 @@ public class ArcherController : MonoBehaviour
         if (canDoubleJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
+                            AudioManager.instance.PlaySFX(10);
+
             canDoubleJump = false;
         }
 
@@ -137,6 +141,8 @@ public class ArcherController : MonoBehaviour
         if (!canShoot) return;
 
         anim.SetTrigger("attack");
+                        AudioManager.instance.PlaySFX(0);
+
         canShoot = false;
         Invoke(nameof(ResetShoot), shootCooldown);
         Invoke(nameof(ShootArrow), 0.8f); // Delay before shooting arrow
@@ -160,23 +166,19 @@ public class ArcherController : MonoBehaviour
 
     private void ShootArrow()
     {
-        // تعیین جهت تیر بر اساس flipX کاراکتر
         float direction = sprite.flipX ? -1f : 1f;
 
-        // موقعیت شروع تیر
         Vector3 spawnPosition = shootPoint.position;
         spawnPosition.x += direction * 0.2f;
 
         GameObject arrow = Instantiate(arrowPrefab, spawnPosition, Quaternion.identity);
 
-        // تعیین جهت حرکت تیر
         Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
         if (arrowRb != null)
         {
             arrowRb.linearVelocity = new Vector2(direction * arrowSpeed, 0f);
         }
 
-        // چرخش ظاهری تیر
         SpriteRenderer arrowSprite = arrow.GetComponent<SpriteRenderer>();
         if (arrowSprite != null)
         {
@@ -223,11 +225,5 @@ public class ArcherController : MonoBehaviour
         Debug.Log("Character took damage!");
     }
 
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("EnemyAttack"))
-    //     {
-    //         TakeDamage();
-    //     }
-    // }
+
 }

@@ -19,6 +19,8 @@ public class Enemy1Health : MonoBehaviour
     void Die()
     {
         anim.SetTrigger("death");
+        AudioManager.instance.PlaySFX(8);
+
         Debug.Log("Enemy died!");
     }
     void deathAnim()

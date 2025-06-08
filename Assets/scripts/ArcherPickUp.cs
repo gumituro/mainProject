@@ -28,8 +28,12 @@ public class ArcherPickUp : MonoBehaviour
             ArcherController playerAttack = other.GetComponent<ArcherController>();
             if (playerAttack != null)
             {
+
+                
                 if (isHealthDrop)
                     isCollected = true;
+                AudioManager.instance.PlaySFX(5);
+
                 Destroy(gameObject);
 
                 {
@@ -43,9 +47,11 @@ public class ArcherPickUp : MonoBehaviour
                 }
                 if (isDamageDrop)
                 {
+                    AudioManager.instance.PlaySFX(4);
+
                     isCollected = true;
                     playerAttack.StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
-                    gameObject.SetActive(false); 
+                    gameObject.SetActive(false);
 
                 }
 

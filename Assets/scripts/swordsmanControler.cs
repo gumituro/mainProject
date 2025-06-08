@@ -126,6 +126,8 @@ public class SwordmanController : MonoBehaviour
         if (isGrounded && !isDashing)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                            AudioManager.instance.PlaySFX(10);
+
             isGrounded = false;
         }
     }
@@ -148,6 +150,8 @@ public class SwordmanController : MonoBehaviour
     {
 
         anim.SetTrigger("attack");
+                        AudioManager.instance.PlaySFX(1);
+
 
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
