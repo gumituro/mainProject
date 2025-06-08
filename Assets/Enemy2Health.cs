@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class Enemy1Health : MonoBehaviour
+public class Enemy2Health : MonoBehaviour
 {
     public int health = 3;
-    public Animator anim; 
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("Enemy1 took damage: " + damage + ", health left: " + health);
+        Debug.Log("Enemy2 took damage: " + damage + ", health left: " + health);
 
         if (health <= 0)
         {
@@ -18,11 +17,7 @@ public class Enemy1Health : MonoBehaviour
 
     void Die()
     {
-        anim.SetTrigger("death");
         Debug.Log("Enemy died!");
-    }
-    void deathAnim()
-    {
-        Destroy(gameObject);
+        Destroy(gameObject); //or any anims 
     }
 }

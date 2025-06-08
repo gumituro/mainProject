@@ -9,18 +9,16 @@ public class enemy2controler : MonoBehaviour
     public Transform firePoint;
     public float bulletSpeed = 10f;
 
-    private Transform target;
     private float fireTimer = 0f;
     public Boolean ViewIsRight; 
 
     void Update()
     {
-        if (target != null)
+        if (DangerArea.instance.target != null)
         {
 
             if (ViewIsRight)
             {
-                // gameObject.transform.rotation.y = 180f; 
                 transform.rotation = Quaternion.Euler(0 , 180f , 0); 
             }         
 
@@ -33,48 +31,18 @@ public class enemy2controler : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-            Debug.Log("Shooting!");
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = firePoint.right * bulletSpeed;
-        }
-    }
+void Shoot()
+{
+    if (DangerArea.instance.target == null) return;
 
+    Vector2 direction = (DangerArea.instance.target.position - firePoint.position).normalized;
 
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (other.transform.position.x > gameObject.transform.position.x)
-            {
-                ViewIsRight = true;
-            }
-            else
-            {
-                ViewIsRight = false; 
-            }
-
-            //  Debug.Log("Player is in range");
-
-            target = other.transform;
-        }
-    }
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+    
+    bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed;
+}
 
 
 
-
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && other.transform == target)
-        {
-            target = null;
-        }
-    }
 }

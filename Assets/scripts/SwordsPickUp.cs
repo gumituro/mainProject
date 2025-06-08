@@ -48,8 +48,8 @@ public class SwordsPickUp : MonoBehaviour
                 if (isDamageDrop)
                 {
                     isCollected = true;
-                    StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
-                    // gameObject.SetActive(false); 
+                    playerAttack.StartCoroutine(playerAttack.TemporaryDamageBoost(boostAmount, boostDuration));
+                    gameObject.SetActive(false); 
 
                 }
                 

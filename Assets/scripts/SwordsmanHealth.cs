@@ -14,7 +14,7 @@ public class SwordsmanHealth : MonoBehaviour
 
     // public SwordmanController swordmanController;
 
-    private float SwordsdamageCooldown = 1f; // زمان بین دو دمج
+    private float SwordsdamageCooldown = 0.8f; // زمان بین دو دمج
     private float SwordslastDamageTime;
 
     void Start()

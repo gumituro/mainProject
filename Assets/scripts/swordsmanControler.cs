@@ -7,7 +7,7 @@ using System.Collections;
 
 public class SwordmanController : MonoBehaviour
 {
-    // public AttackTrigger attackTrigger;
+    public AttackTrigger attackTrigger;
 
     // public Transform attackPoint;
     public GameObject attackPoint;
@@ -47,6 +47,11 @@ public class SwordmanController : MonoBehaviour
     void Start()
     {
         if (anim == null) anim = GetComponent<Animator>();
+
+        if (attackTrigger == null)
+        {
+            attackTrigger = GetComponentInChildren<AttackTrigger>();
+        }
 
 
 
@@ -144,32 +149,14 @@ public class SwordmanController : MonoBehaviour
 
         anim.SetTrigger("attack");
 
-        // if (enemyInRange == false)
-        // {
-        //     Debug.Log("enemy not found");
-        // }
 
-        // if (enemyInRange == true && currentEnemy != null)
-        // {
-        //     Debug.Log("enemy in range");
-
-        //     Enemy1Health enemy1 = currentEnemy.GetComponent<Enemy1Health>(); // هلث انمی حرکتی قرار داده شد
-
-        //     if (enemy1 != null)
-        //     {
-        //         // Debug.Log("");
-        //         enemy1.TakeDamage(attackDamage);
-        //     }
-
-        // }
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius , enemies);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
 
         foreach (Collider2D Enemy in hitEnemies)
         {
             Debug.Log("hit enemy");
 
-            // Enemy.GetComponent<Enemy1Health>()?.TakeDamage(attackDamage);
+            Enemy.GetComponent<Enemy1Health>()?.TakeDamage(attackDamage);
         }
 
 
@@ -179,10 +166,9 @@ public class SwordmanController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (attackPoint == null) return;
 
-        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
         Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
     }
 
 
