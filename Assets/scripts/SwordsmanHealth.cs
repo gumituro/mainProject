@@ -44,6 +44,7 @@ public class SwordsmanHealth : MonoBehaviour
                 Debug.Log("Swordsman Died!"); //dead anim isnt applied
 
                 // swordmanController.die();
+                anim.SetTrigger("death");
                 StartCoroutine(RestartScene());
 
             }
