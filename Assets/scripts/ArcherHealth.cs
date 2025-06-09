@@ -44,10 +44,15 @@ public class ArcherHealth : MonoBehaviour
             {
                 ArchercurrentHealth = 0;
                 Debug.Log("Archer Died!"); //dead anim isnt applied
-                StartCoroutine(RestartScene());
+                anim.SetTrigger("death");
 
             }
         }
+    }
+    void die()
+    {
+                        StartCoroutine(RestartScene());
+
     }
     void Update()
     {
