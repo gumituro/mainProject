@@ -1698,6 +1698,7 @@ GameObject:
   - component: {fileID: 1817650007343257049}
   - component: {fileID: 8404524264374913783}
   - component: {fileID: 4711810311436645355}
+  - component: {fileID: 4727102699117956233}
   m_Layer: 0
   m_Name: ChunkPoint1
   m_TagString: wall
@@ -1910,6 +1911,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4727102699117956233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793597267487000763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dda5952c474175914db1b586cc52f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunkToActivate: {fileID: 0}
+  teleportTarget: {fileID: 0}
 --- !u!1 &6057735494520589510
 GameObject:
   m_ObjectHideFlags: 0
