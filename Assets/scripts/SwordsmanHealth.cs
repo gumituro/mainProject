@@ -45,10 +45,15 @@ public class SwordsmanHealth : MonoBehaviour
 
                 // swordmanController.die();
                 anim.SetTrigger("death");
-                StartCoroutine(RestartScene());
 
             }
         }
+    }
+    void die()
+    {
+        
+                        StartCoroutine(RestartScene());
+
     }
 
 
