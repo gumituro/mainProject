@@ -13002,10 +13002,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StairCase
       objectReference: {fileID: 0}
-    - target: {fileID: 2285148708531283298, guid: 409d128a10623a542a2beb205ef823fc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6931544414484593714, guid: 409d128a10623a542a2beb205ef823fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.326866
@@ -13129,4 +13125,3 @@ SceneRoots:
   - {fileID: 862931533025325964}
   - {fileID: 6143655741456116443}
   - {fileID: 1375633547}
-  - {fileID: 1902113765}
