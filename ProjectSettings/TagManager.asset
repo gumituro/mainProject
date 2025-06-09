@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - newChunk
+  - Stair
+  - boundry
+  - wall
   layers:
   - Default
   - TransparentFX

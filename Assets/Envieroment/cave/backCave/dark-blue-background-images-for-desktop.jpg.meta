@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark-blue-background-images-for-desktop_0: 260209668098052434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
