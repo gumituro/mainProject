@@ -141,7 +141,6 @@ public class ArcherController : MonoBehaviour
         if (!canShoot) return;
 
         anim.SetTrigger("attack");
-                        AudioManager.instance.PlaySFX(0);
 
         canShoot = false;
         Invoke(nameof(ResetShoot), shootCooldown);
@@ -165,11 +164,13 @@ public class ArcherController : MonoBehaviour
     }
 
     private void ShootArrow()
-    {
+    {                               AudioManager.instance.PlaySFX(0);
+
         float direction = sprite.flipX ? -1f : 1f;
 
         Vector3 spawnPosition = shootPoint.position;
-        spawnPosition.x += direction * 0.2f;
+        spawnPosition.x += direction * 0.2f; 
+
 
         GameObject arrow = Instantiate(arrowPrefab, spawnPosition, Quaternion.identity);
 

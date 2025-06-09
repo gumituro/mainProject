@@ -7,6 +7,9 @@ using System.Collections;
 
 public class SwordmanController : MonoBehaviour
 {
+
+    private float lastHorizontalDirection = 1f; //چپ1
+
     public AttackTrigger attackTrigger;
 
     // public Transform attackPoint;
@@ -95,6 +98,16 @@ public class SwordmanController : MonoBehaviour
 
         moveInput = moveAction.ReadValue<Vector2>();
 
+        if (moveInput.x > 0.01f)
+            lastHorizontalDirection = 1f;
+        else if (moveInput.x < -0.01f)
+            lastHorizontalDirection = -1f;
+
+        sprite.flipX = lastHorizontalDirection < 0;
+
+
+
+
         if (isDashing)
         {
             dashTime -= Time.deltaTime;
@@ -105,7 +118,7 @@ public class SwordmanController : MonoBehaviour
             }
         }
 
-        sprite.flipX = rb.linearVelocity.x < 0;
+        // sprite.flipX = rb.linearVelocity.x < 0;
 
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
@@ -126,7 +139,7 @@ public class SwordmanController : MonoBehaviour
         if (isGrounded && !isDashing)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-                            AudioManager.instance.PlaySFX(10);
+            AudioManager.instance.PlaySFX(10);
 
             isGrounded = false;
         }
@@ -150,7 +163,7 @@ public class SwordmanController : MonoBehaviour
     {
 
         anim.SetTrigger("attack");
-                        AudioManager.instance.PlaySFX(1);
+        AudioManager.instance.PlaySFX(1);
 
 
 
@@ -161,6 +174,7 @@ public class SwordmanController : MonoBehaviour
             Debug.Log("hit enemy");
 
             Enemy.GetComponent<Enemy1Health>()?.TakeDamage(attackDamage);
+            Enemy.GetComponent<Enemy2Health>()?.TakeDamage(attackDamage);
         }
 
 

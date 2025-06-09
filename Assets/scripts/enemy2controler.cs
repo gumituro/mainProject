@@ -4,55 +4,59 @@ using UnityEngine;
 
 public class enemy2controler : MonoBehaviour
 {
-    public float fireRate = 1f; 
+    public Animator anim; 
+
+    public float fireRate = 1f;
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 10f;
 
     private float fireTimer = 0f;
-    public Boolean ViewIsRight; 
+    public Boolean ViewIsRight;
 
 
     void Update()
-{
-    if (DangerArea.instance.target != null)
     {
-        Vector3 targetPosition = DangerArea.instance.target.position;
+        if (DangerArea.instance.target != null)
+        {
+            Vector3 targetPosition = DangerArea.instance.target.position;
 
-        if (targetPosition.x > transform.position.x)
-        {
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
-            ViewIsRight = true;
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            ViewIsRight = false;
-        }
+            if (targetPosition.x > transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(0, 180f, 0);
+                ViewIsRight = true;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                ViewIsRight = false;
+            }
 
-        fireTimer += Time.deltaTime;
-        if (fireTimer >= fireRate)
-        {
-            Shoot();
-            fireTimer = 0f;
+            fireTimer += Time.deltaTime;
+            if (fireTimer >= fireRate)
+            {
+                Shoot();
+                fireTimer = 0f;
+            }
         }
     }
-}
 
 
 
-void Shoot()
-{
-    if (DangerArea.instance.target == null) return;
-                    AudioManager.instance.PlaySFX(2);
+    void Shoot()
+    {
+        if (DangerArea.instance.target == null) return;
 
 
-    Vector2 direction = (DangerArea.instance.target.position - firePoint.position).normalized;
+           AudioManager.instance.PlaySFX(2);
 
-    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-    
-    bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed;
-}
+
+        Vector2 direction = (DangerArea.instance.target.position - firePoint.position).normalized;
+
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed;
+    }
 
 
 

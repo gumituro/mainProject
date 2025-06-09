@@ -3,8 +3,8 @@ using UnityEngine;
 public class ArrowScript : MonoBehaviour
 {
     public float speed = 2;
-    public ArcherController archer; 
-    // ArcherController archer; 
+    // public ArcherController archer; 
+
 
     void Update()
     {
@@ -15,7 +15,6 @@ public class ArrowScript : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("enemy!!!");
             var enemy1 = collision.GetComponent<Enemy1Health>();
             var enemy2 = collision.GetComponent<Enemy2Health>();
 
