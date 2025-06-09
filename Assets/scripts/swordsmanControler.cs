@@ -118,7 +118,6 @@ public class SwordmanController : MonoBehaviour
             }
         }
 
-        // sprite.flipX = rb.linearVelocity.x < 0;
 
         anim.SetBool("isJumping", !isGrounded);
         anim.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
@@ -203,31 +202,6 @@ public class SwordmanController : MonoBehaviour
     // public bool enemyInRange = false;
     // public GameObject currentEnemy = null;
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //         Debug.Log("Trigger entered with: " + other.name);
-
-    //     if (other.CompareTag("Enemy"))
-    //     {
-    //         enemyInRange = true;
-    //         currentEnemy = other.gameObject;
-
-    //     }
-    // }
-
-
-
-    // private void OnTriggerExit2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Enemy"))
-    //     {
-    //         if (other.gameObject == currentEnemy)
-
-    //             enemyInRange = false;
-    //         currentEnemy = null;
-
-    //     }
-    // }
 
 
 
