@@ -12,7 +12,6 @@ public class ArcherHealthDisplay : MonoBehaviour
         instance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateHealthDisplay(); 

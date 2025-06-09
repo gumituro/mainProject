@@ -10,7 +10,7 @@ public class ArcherHealth : MonoBehaviour
     public Animator anim;
 
 
-    private float ArcherdamageCooldown = 1f;
+    private float ArcherdamageCooldown = 0.8f;
     private float ArcherlastDamageTime;
 
     void Start()
