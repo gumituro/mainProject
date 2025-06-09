@@ -32,7 +32,7 @@ public class FallingIcicleRepeater : MonoBehaviour
 
     void PreFallWarning()
     {
-        if (!isFalling)
+        if (!isFalling && gameObject.activeInHierarchy)
         {
             if (preFallSound != null)
                 audioSource.PlayOneShot(preFallSound);
@@ -58,7 +58,7 @@ public class FallingIcicleRepeater : MonoBehaviour
                 health.Damage();
         }
 
-        if (impactSound != null)
+        if (impactSound != null && gameObject.activeInHierarchy)
             audioSource.PlayOneShot(impactSound);
 
         StopFalling();
