@@ -10,6 +10,7 @@ TagManager:
   - Stair
   - boundry
   - wall
+  - portal
   layers:
   - Default
   - TransparentFX
