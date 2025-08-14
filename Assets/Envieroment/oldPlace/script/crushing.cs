@@ -27,7 +27,7 @@
 //                {
 //                    health.TakeDamage(1);
 
-//                    // اگر جان تمام شد، ریست کن
+////if there is no more health, reset
 //                    if (health.currentHealth <= 0)
 //                    {
 //                        RestartLevelOnce();
@@ -36,6 +36,7 @@
 //            }
 //        }
 //    }
+
 
 //    private void RestartLevelOnce()
 //    {
