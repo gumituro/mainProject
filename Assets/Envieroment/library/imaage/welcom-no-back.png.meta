@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      welcom-no-back_0: -6707817943028036250
+      welcom-no-back_1: 6848752106365204132
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
