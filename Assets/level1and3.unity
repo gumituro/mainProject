@@ -2736,6 +2736,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1844940019911742575, guid: 4aa540a5da8b28448b932c7b1f6ba549, type: 3}
+      propertyPath: archer
+      value: 
+      objectReference: {fileID: 8745163399529093446, guid: 54643fb2895b9c24bb454ee622fa11a4, type: 3}
+    - target: {fileID: 1844940019911742575, guid: 4aa540a5da8b28448b932c7b1f6ba549, type: 3}
+      propertyPath: swordsman
+      value: 
+      objectReference: {fileID: 6127860977861705786, guid: 544f7d6b439584344b5dee768098ef12, type: 3}
     - target: {fileID: 8964300161258186624, guid: 4aa540a5da8b28448b932c7b1f6ba549, type: 3}
       propertyPath: m_Name
       value: boss
