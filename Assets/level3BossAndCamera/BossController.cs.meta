@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: a5fc1db4f6371364cbac0a8f0404688f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - archer: {instanceID: 0}
+  - swordsman: {instanceID: 0}
+  - webPrefab: {fileID: 1909517126620317056, guid: 9da347bfe557a6240aff8ee331fc614a, type: 3}
+  - firePoint: {fileID: 3743503619966464276, guid: 407074d45fcddcf4684c408614196cfd, type: 3}
+  - winPanel: {fileID: 4876212309010941884, guid: 916ef5c404e2d444f948e428e2eb075d, type: 3}
+  - losePanel: {fileID: 2376747930009551533, guid: ec9c1993754ada547891ac4146a96c59, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
