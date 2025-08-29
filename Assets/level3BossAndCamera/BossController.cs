@@ -146,8 +146,9 @@ public class BossController : MonoBehaviour
                 if (dir.y < -0.5f) anim.SetTrigger("jumpLand");
 
                 // پرتاب تار
-                anim.SetTrigger("attack4");
-                ShootWeb(dir);
+                anim.SetTrigger("attack3");
+                //ShootWeb(dir);
+                //FireWeb();
 
                 yield return new WaitForSeconds(2f);
                 timer += 2f;
@@ -161,11 +162,26 @@ public class BossController : MonoBehaviour
         }
     }
 
-    void ShootWeb(Vector2 dir)
+    /*void ShootWeb(Vector2 dir)
     {
         GameObject web = Instantiate(webPrefab, firePoint.position, Quaternion.identity);
         Rigidbody2D wrb = web.GetComponent<Rigidbody2D>();
         wrb.linearVelocity = dir * webSpeed;
+    }*/
+    
+    public void FireWeb()
+    {
+        if (webPrefab == null || firePoint == null || currentTarget == null) return;
+    
+        GameObject web = Instantiate(webPrefab, firePoint.position, Quaternion.identity);
+    
+        Rigidbody2D rb = web.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            // جهت شلیک به سمت بازیکنی که باس قفل کرده
+            Vector2 direction = (currentTarget.transform.position - firePoint.position).normalized;
+            rb.linearVelocity = direction * webSpeed;
+        }
     }
     public void BossDied()
     {
