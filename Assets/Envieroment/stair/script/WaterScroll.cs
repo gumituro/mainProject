@@ -21,6 +21,7 @@
 //     }
 // }
 
+/*
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
@@ -40,3 +41,4 @@ public class WaterScroll : MonoBehaviour
         mat.mainTextureOffset = new Vector2(offset, 0);
     }
 }
+*/
