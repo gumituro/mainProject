@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      downWeb-Picsart-AiImageEnhancer_0: -7347560490304989982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
