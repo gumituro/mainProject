@@ -11,6 +11,7 @@ TagManager:
   - boundry
   - wall
   - portal
+  - Arena
   layers:
   - Default
   - TransparentFX
