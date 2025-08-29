@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 27bca22e331ea924fbab77b5336a98f7
+guid: ec292756ae28eae4a8308f265a4b49e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1937621308671882471
-    second: laputa-castle-in-the-sky-004 (1)_0
+      213: -7347560490304989982
+    second: downWeb-Picsart-AiImageEnhancer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laputa-castle-in-the-sky-004 (1)_0
+      name: downWeb-Picsart-AiImageEnhancer_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2048
-        height: 576
+        width: 450
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e47d947050d3ea10800000000000000
-      internalID: 1937621308671882471
+      spriteID: 2e41da1c9a8380a90800000000000000
+      internalID: -7347560490304989982
       vertices: []
       indices: 
       edges: []
