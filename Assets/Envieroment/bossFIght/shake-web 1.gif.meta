@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shake-web 1_0: 5449219655593878758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
