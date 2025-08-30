@@ -11,6 +11,7 @@ TagManager:
   - boundry
   - wall
   - portal
+  - Arena
   layers:
   - Default
   - TransparentFX
@@ -22,9 +23,9 @@ TagManager:
   - ArcherArrow
   - Enemy
   - DangerArea
-  - 
-  - 
-  - 
+  - webProj
+  - boss
+  - arena
   - 
   - 
   - 
