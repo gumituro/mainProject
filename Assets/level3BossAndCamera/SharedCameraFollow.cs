@@ -23,7 +23,8 @@ public class SharedCameraFollow : MonoBehaviour
 
         targetPos.x = Mathf.Clamp(targetPos.x, minBounds.x, maxBounds.x);
         targetPos.y = Mathf.Clamp(targetPos.y, minBounds.y, maxBounds.y);
-        targetPos.z = offset.z;
+        //targetPos.z = offset.z;
+        targetPos.z = -10;
 
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
     }
