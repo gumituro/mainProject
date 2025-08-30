@@ -5,7 +5,7 @@ public class modeSelection : MonoBehaviour
 {
     public void OnOfflineMode()
     {
-        //SceneManager.LoadScene()
+        SceneManager.LoadScene("CharacterSelection");
         //charaterselection
     }
 

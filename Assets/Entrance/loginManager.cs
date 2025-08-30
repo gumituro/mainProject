@@ -17,7 +17,7 @@ public class loginManager : MonoBehaviour {
             } else {
                 playerData.player2Name = usernameInput.text;
             }
-            //SceneManager.LoadScene("Scene_ModeSelect");
+            SceneManager.LoadScene("ModeSelection");
         } else {
             messageText.text = msg;
         }
@@ -27,6 +27,7 @@ public class loginManager : MonoBehaviour {
         string msg;
         if (userManager.SignUp(usernameInput.text, passwordInput.text, out msg)) {
             messageText.text = msg;
+            SceneManager.LoadScene("ModeSelection");
         } else {
             messageText.text = msg;
         }
