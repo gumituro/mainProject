@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        // SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("StartMenu");
     }
 
     /*

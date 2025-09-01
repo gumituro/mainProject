@@ -9,4 +9,7 @@ public static class playerData
     public static string player2Char = "";
     
     public static bool isPlayer1LoggedIn = false;
+    
+    public static bool archerIsTaken = false;
+    public static bool swordsmanIsTaken = false;
 }

@@ -12,6 +12,9 @@ TagManager:
   - wall
   - portal
   - Arena
+  - ChunkEnd
+  - ChunkEntrance
+  - Stop
   layers:
   - Default
   - TransparentFX

@@ -1,17 +1,29 @@
 using UnityEngine;
 
-public class ResetPlayerOnHit : MonoBehaviour
+public class ReturnPlayer : MonoBehaviour
 {
-    public Transform boundaryPoint; // نقطه‌ای که بازیکن برگردد
+    public Transform boundaryPoint; 
+    public int damage = 1; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
-            // بازگرداندن بازیکن به نقطه مشخص
-            other.transform.position = boundaryPoint.position;
+        { 
+            if (other.GetComponent<ArcherHealth>() != null)
+            {
+                ArcherHealth archer = other.GetComponent<ArcherHealth>();
+                archer.Damage();
+                archer.ArchercurrentHealth -= damage;
+            }
+            else if (other.GetComponent<SwordsmanHealth>() != null)
+            {
+                SwordsmanHealth sword = other.GetComponent<SwordsmanHealth>();
+                sword.Damage();
+                sword.SwordscurrentHealth -= damage;
+            }
 
-            // اگر Rigidbody2D دارد، سرعتش را هم صفر کنیم
+            other.transform.position = boundaryPoint.position;
+            
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
             if (rb != null)
             {

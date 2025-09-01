@@ -1,12 +1,22 @@
-/*using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class characterSelection : MonoBehaviour {
     public Text infoText;
-
+    public GameObject archer;
+    public GameObject swordsman;
+    //private bool archerIsTaken = false;
+    //private bool swordsmanIsTaken = false;
+    
     void Start() {
-        if (!playerData.isPlayer1LoggedIn) {
+        if (!playerData.archerIsTaken) archer.SetActive(true);
+        else  archer.SetActive(false);
+        
+        if  (!playerData.swordsmanIsTaken) swordsman.SetActive(true);
+        else  swordsman.SetActive(false);
+        
+        if (string.IsNullOrEmpty(playerData.player1Char)) {
             infoText.text = "Choose your character";
         } else {
             infoText.text = "Oh! see who is here! our next player.";
@@ -14,25 +24,38 @@ public class characterSelection : MonoBehaviour {
     }
 
     public void ChooseArcher() {
-        if (!playerData.isPlayer1LoggedIn) {
+        //if (!playerData.isPlayer1LoggedIn) 
+        if (string.IsNullOrEmpty(playerData.player1Char)) {
             playerData.player1Char = "Archer";
-        } else {
+        }
+        else {
             playerData.player2Char = "Archer";
         }
+        
+        playerData.archerIsTaken = true;
+        archer.SetActive(false);
         NextStep();
     }
 
     public void ChooseSwordsman() {
-        if (!playerData.isPlayer1LoggedIn) {
+        //if (!playerData.isPlayer1LoggedIn) 
+        if (string.IsNullOrEmpty(playerData.player1Char)) {
             playerData.player1Char = "Swordsman";
         } else {
             playerData.player2Char = "Swordsman";
         }
+        
+        playerData.swordsmanIsTaken = true;
+        swordsman.SetActive(false);
         NextStep();
     }
 
-    void NextStep() {
-        if (playerData.isPlayer1LoggedIn && !string.IsNullOrEmpty(playerData.player2Name)) {
+    void NextStep()
+    {
+        Debug.Log("Char1:  " + playerData.player1Char);
+        Debug.Log("Char2:  " + playerData.player2Char);
+        
+        if (!string.IsNullOrEmpty(playerData.player1Char) && !string.IsNullOrEmpty(playerData.player2Char)) {
             SceneManager.LoadScene("StairCase");
 //staircase
         } else {
@@ -41,7 +64,8 @@ public class characterSelection : MonoBehaviour {
         }
     }
 }
-*/
+
+/*
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -84,7 +108,7 @@ public class characterSelection : MonoBehaviour
 
         AfterChoose();
     }*/
-    
+    /*
     public void ChooseArcher()
     {
         Debug.Log("Archer clicked!");
@@ -125,8 +149,7 @@ public class characterSelection : MonoBehaviour
         hasChosen = true; 
         archerButton.SetActive(false);
         swordsmanButton.SetActive(false);
-
-        // رفتن به مرحله بعد
+        
         if (playerData.isPlayer1LoggedIn && !string.IsNullOrEmpty(playerData.player2Name))
         {
             SceneManager.LoadScene("StairCase");
@@ -137,3 +160,4 @@ public class characterSelection : MonoBehaviour
         }
     }
 }
+*/

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChunkLoaderWithRandomTeleport : MonoBehaviour
+public class teleport : MonoBehaviour
 {
     public GameObject caveChunk;
     public Transform caveTeleportTarget;
@@ -11,7 +11,7 @@ public class ChunkLoaderWithRandomTeleport : MonoBehaviour
     private GameObject selectedChunk = null;
     private Transform selectedTeleportTarget = null;
 
-    private bool hasSelected = false; // آیا چانک تصادفی انتخاب شده؟
+    private bool hasSelected = false; //consiquense?
 
     private void OnTriggerEnter2D(Collider2D other)
     {

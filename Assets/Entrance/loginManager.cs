@@ -27,6 +27,7 @@ public class loginManager : MonoBehaviour {
         string msg;
         if (userManager.SignUp(usernameInput.text, passwordInput.text, out msg)) {
             messageText.text = msg;
+            if (!playerData.isPlayer1LoggedIn) playerData.isPlayer1LoggedIn = true;
             SceneManager.LoadScene("ModeSelection");
         } else {
             messageText.text = msg;
